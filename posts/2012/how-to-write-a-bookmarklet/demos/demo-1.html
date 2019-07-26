@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bookmarklet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  </head>
+  <body>
+    <span id="test">click me</span>
+    <script>
+      document.getElementById('test').addEventListener('click', function () {
+        if (!!document.getElementById('bookmarklet')) {
+          return
+        }
+        let div = document.createElement('div')
+        div.id = 'bookmarklet'
+        div.style.cssText = 'cursor:pointer;width:30px;border:2px solid #000;position:fixed;left:0;top:'+ window.innerHeight/4 +'px'
+        div.innerHTML = `
+          <div style="background:#f00;height:30px;width:30px"></div>
+          <div style="background:#0f0;height:30px;width:30px"></div>
+          <div style="background:#00f;height:30px;width:30px"></div>
+          <div style="background:#ff0;height:30px;width:30px"></div>
+          <p style="padding:0 5px;margin:0;position:absolute;left:30px;top:-2px;background:black;color:white">X</p>
+        `
+        div.addEventListener('click', function (e) {
+          if (e.target.tagName === 'P') {
+            document.body.removeChild(div)
+          } else {
+            document.body.style.backgroundColor = getComputedStyle(e.target).backgroundColor
+          }
+        }, false)
+        document.body.appendChild(div)
+      }, false)
+    </script>
+  </body>
+</html>

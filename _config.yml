@@ -1,0 +1,16 @@
+# theme: jekyll-theme-myst729
+sass:
+  style: :compressed
+
+title: dg
+tagline: just another ordinary coder
+avatar: /assets/avatar.png
+baseurl: /
+excerpt_separator: <!--more-->
+
+links: ['posts', 'projects', 'slides', 'books', 'music']
+
+social:
+  weibo: https://weibo.com/myst729
+  github: https://github.com/myst729
+  stackoverflow: https://stackoverflow.com/users/1032492

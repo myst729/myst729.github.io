@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="wrap home">
+      <div class="serif">
+        <h1>{{ site.title }}</h1>
+        <span class="lead">{{ site.tagline }}</span>
+      </div>
+      <hr>
+      <ul class="home-links">
+        {% for item in site.links %}
+        <li><a href="{{ item | relative_url }}/">{{ item }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="home-social">
+        {% for item in site.social %}
+        <li><a href="{{ item[1] }}" target="_blank"><i class="fontello icon-{{ item[0] }}"></i></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

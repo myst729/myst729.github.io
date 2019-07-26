@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include aside.html %}
+    {% include top.html %}
+    <div class="wrap">
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+    {% if page.toc == true %}
+    {% include toc.html %}
+    {% endif %}
+  </body>
+</html>

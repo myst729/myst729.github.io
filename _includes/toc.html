@@ -1,0 +1,32 @@
+<script>
+void function (win, doc, undef) {
+  let body = doc.querySelector('.body')
+  let toc = doc.createElement('div')
+  toc.className = 'toc'
+
+  let title = doc.createElement('span')
+  title.className = 'toc-title'
+  title.textContent = 'TOC'
+  title.addEventListener('click', _ => toc.classList.toggle('toc-collapse'), false)
+
+  let box = doc.createElement('div')
+  box.className = 'toc-box'
+  body.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+    let anchor = doc.createElement('a')
+    anchor.href = `#${heading.id}`
+    anchor.className = 'toc-anchor'
+    anchor.textContent = heading.textContent
+    anchor.dataset.level = heading.tagName.slice(1)
+    box.appendChild(anchor)
+  })
+
+  toc.appendChild(title)
+  toc.appendChild(box)
+  body.parentNode.insertBefore(toc, body.previousElementSibling)
+
+  let back = doc.createElement('div')
+  back.className = 'toc-back'
+  back.addEventListener('click', _ => win.scrollTo(0, 0), false)
+  doc.body.appendChild(back)
+}(window, document)
+</script>

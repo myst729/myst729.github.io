@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="post">
+  <h1 class="post-title">
+    <a href="{{ page.link }}" target="_blank">{{ page.title }}</a>
+  </h1>
+  <span class="post-date">/music/ @ {{ page.date }}</span>
+  <hr>
+  <div class="body{% if page.toc == true %} toc-target{% endif %}">
+    {{ content }}
+    <hr>
+  </div>
+</div>

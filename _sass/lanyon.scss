@@ -1,0 +1,668 @@
+/*
+ * Global resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Prevent scroll on narrow devices */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: Corbel, Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Bitstream Vera Sans, Liberation Sans, Verdana, Verdana Ref, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (min-width: 38em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  color: #515151;
+  background-color: #fff;
+  text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: #313131;
+  letter-spacing: -.025rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  font-size: 1rem;
+}
+
+/* No `:visited` state is required by default (browsers will use `a`) */
+a {
+  color: #268bd2;
+  text-decoration: none;
+}
+a strong {
+  color: inherit;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #303030;
+}
+
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}
+
+/* Code */
+code,
+pre {
+  font-family: Menlo, Consolas, Monaco, Courier New, Courier, monospace;
+}
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Quotes */
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #7a7a7a;
+  border-left: .25rem solid #e5e5e5;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 30em) {
+  blockquote {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+img,
+video {
+  display: block;
+  max-width: 100%;
+  margin: 1rem auto;
+  border-radius: .35em;
+}
+img {
+  padding: .3em;
+  border: 1px solid #c0c0c0;
+}
+
+/* Tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+
+
+/*
+ * Wrapper
+ *
+ * The wrapper is used to position site content when the sidebar is toggled. We
+ * use an outter wrap to position the sidebar without interferring with the
+ * regular page content.
+ */
+
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+
+.container {
+  max-width: 28rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+@media (min-width: 38em) {
+  .container {
+    max-width: 32rem;
+  }
+}
+@media (min-width: 56em) {
+  .container {
+    max-width: 38rem;
+  }
+}
+@media (min-width: 68em) {
+  .container {
+    max-width: 44rem;
+  }
+}
+
+
+/*
+ * Masthead
+ *
+ * Super small header above the content for site name and short description.
+ */
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #505050;
+}
+.masthead-title a {
+  color: #505050;
+}
+.masthead-title small {
+  font-size: 75%;
+  font-weight: 400;
+  color: #c0c0c0;
+  letter-spacing: 0;
+  padding-left: .45em;
+}
+
+@media (max-width: 48em) {
+  .masthead-title {
+    text-align: center;
+  }
+  .masthead-title small {
+    display: none;
+  }
+}
+
+
+/*
+ * Sidebar
+ *
+ * The sidebar is the drawer, the item we are toggling with our handy hamburger
+ * button in the corner of the page.
+ *
+ * This particular sidebar implementation was inspired by Chris Coyier's
+ * "Offcanvas Menu with CSS Target" article, and the checkbox variation from the
+ * comments by a reader. It modifies both implementations to continue using the
+ * checkbox (no change in URL means no polluted browser history), but this uses
+ * `position` for the menu to avoid some potential content reflow issues.
+ *
+ * Source: http://css-tricks.com/off-canvas-menu-with-css-target/#comment-207504
+ */
+
+/* Style and "hide" the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -14rem;
+  width: 14rem;
+  overflow-y: auto;
+  font-size: .875rem; /* 15px */
+  color: rgba(255,255,255,.6);
+  background-color: #202020;
+}
+@media (min-width: 30em) {
+  .sidebar {
+    font-size: .75rem; /* 14px */
+  }
+}
+
+/* Sidebar content */
+.sidebar a {
+  font-weight: normal;
+  color: #fff;
+}
+.sidebar-item {
+  padding: 1rem;
+}
+.sidebar-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.sidebar-nav-item {
+  display: block;
+  padding: .5rem 1rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: none;
+  background-color: rgba(255,255,255,.1);
+  border-color: transparent;
+}
+.sidebar-nav-item i {
+  margin-right: .5em;
+}
+
+@media (min-width: 48em) {
+  .sidebar-item {
+    padding: 1.5rem;
+  }
+  .sidebar-nav-item {
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+.sidebar img {
+  border: none;
+  width: 5rem;
+}
+
+/* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
+.sidebar-checkbox {
+  position: absolute;
+  opacity: 0;
+  user-select: none;
+}
+
+/* Style the `label` that we use to target the `.sidebar-checkbox` */
+.sidebar-toggle {
+  position: fixed;
+  top:  .8rem;
+  left: 1rem;
+  z-index: 20;
+  display: block;
+  padding: .25rem .75rem;
+  color: #505050;
+  background-color: #fff;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.sidebar-toggle:before {
+  display: inline-block;
+  width: 1rem;
+  height: .75rem;
+  content: "";
+  background-image: linear-gradient(to bottom, #555, #555 20%, transparent 20%, transparent 40%, #555 40%, #555 60%, transparent 60%, transparent 80%, #555 80%, #555 100%);
+}
+
+.sidebar-toggle:active,
+.sidebar-checkbox:checked ~ .sidebar-toggle {
+  color: #fff;
+  background-color: #555;
+}
+
+.sidebar-toggle:active:before,
+.sidebar-checkbox:checked ~ .sidebar-toggle:before {
+  background-image: linear-gradient(to bottom, #fff, #fff 20%, transparent 20%, transparent 40%, #fff 40%, #fff 60%, transparent 60%, transparent 80%, #fff 80%, #fff 100%);
+}
+
+@media print {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+
+/* Slide effect
+ *
+ * Handle the sliding effects of the sidebar and content in one spot, seperate
+ * from the default styles.
+ *
+ * As an a heads up, we don't use `transform: translate3d()` here because when
+ * mixed with `position: fixed;` for the sidebar toggle, it creates a new
+ * containing block. Put simply, the fixed sidebar toggle behaves like
+ * `position: absolute;` when transformed.
+ *
+ * Read more about it at http://meyerweb.com/eric/thoughts/2011/09/12/.
+ */
+
+.sidebar,
+.sidebar-toggle,
+.masthead,
+.wrap {
+  backface-visibility: hidden;
+  transition: transform .3s ease-in-out;
+}
+
+.sidebar-checkbox:checked ~ .sidebar {
+  z-index: 10;
+}
+.sidebar-checkbox:checked ~ .sidebar,
+.sidebar-checkbox:checked ~ .sidebar-toggle,
+.sidebar-checkbox:checked ~ .masthead,
+.sidebar-checkbox:checked ~ .wrap {
+  transform: translateX(14rem);
+}
+
+
+/*
+ * Home and 404
+ */
+
+.home {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80vw;
+}
+.home hr {
+  width: 80vw;
+  max-width: 50rem;
+}
+.home h1,
+.home span {
+  text-align: center;
+}
+.home h1 {
+  font-size: 8em;
+}
+.home ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.home li {
+  display: inline-block;
+  margin: 0 .36em;
+}
+.home-links a:before,
+.home-links a:after {
+  content: '/';
+}
+@media (max-width: 44em) {
+  .home h1 {
+    font-size: 6em;
+  }
+  .home-links li {
+    display: block;
+    margin: .5em 0;
+  }
+  .home-links a {
+    display: block;
+    padding: .25em 2em;
+    border: 1px solid #c0c0c0;
+    border-radius: 4rem;
+  }
+  .home-links a:before,
+  .home-links a:after {
+    content: '';
+  }
+  .home-links a:hover {
+    text-decoration: none;
+    border: 1px solid #9a9a9a;
+  }
+}
+.home .fontello {
+  font-size: 1.4rem;
+  color: #808080;
+}
+.home .fontello:hover {
+  color: #505050;
+}
+.page-404 {
+  margin-top: 7em;
+}
+.content {
+  padding-top: 5rem;
+}
+
+ /*
+ * Posts and pages
+ *
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+
+.page,
+.post {
+  margin-bottom: 1.5em;
+}
+
+.page:after,
+.post:after {
+  content: '— EOF —';
+  color: #c0c0c0;
+  display: block;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* Blog post or page title */
+.page-title,
+.post-title {
+  color: #303030;
+  margin-top: 0;
+}
+
+/* Meta data line below post title */
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+
+
+/*
+ * Table of Content
+ */
+
+.toc {
+  border: 1px solid #c0c0c0;
+  padding: .5em 1.75em .5em .75em;
+  display: inline-block;
+}
+.toc-title {
+  cursor: pointer;
+  display: block;
+  font-size: .75em;
+  font-weight: 700;
+}
+.toc-title:after {
+  content: '';
+  margin-left: .75em;
+  display: inline-block;
+  border: .4em solid transparent;
+  border-top-color: #515151;
+  border-bottom-width: .2em;
+}
+.toc-collapse .toc-title:after {
+  border-top-color: transparent;
+  border-left-color: #515151;
+  border-bottom-width: .4em;
+}
+.toc-box {
+  margin-top: .5em;
+}
+.toc-collapse .toc-box {
+  display: none;
+}
+.toc-anchor {
+  display: block;
+  font-size: .75em;
+}
+.toc-anchor[data-level="2"] {
+  text-indent: 1em;
+}
+.toc-anchor[data-level="3"] {
+  text-indent: 2em;
+}
+.toc-anchor[data-level="4"] {
+  text-indent: 3em;
+}
+.toc-anchor[data-level="5"] {
+  text-indent: 4em;
+}
+.toc-anchor[data-level="6"] {
+  text-indent: 5em;
+}
+.toc-target h1:before,
+.toc-target h2:before,
+.toc-target h3:before,
+.toc-target h4:before,
+.toc-target h5:before,
+.toc-target h6:before {
+  content: '';
+  display: block;
+  height: 5rem;
+  margin-top: -5rem;
+}
+.toc-back {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  background-color: #eee;
+  border: 1px solid #c0c0c0;
+  border-radius: 7px;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toc-back:after {
+  content: '';
+  border-left: .4em solid transparent;
+  border-right: .4em solid transparent;
+  border-bottom: .8em solid #505050;
+}
+
+
+/*
+ * Custom type
+ *
+ * Extend paragraphs with `.lead` for larger introductory text.
+ */
+
+.serif {
+  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+
+/*
+ * Messages
+ *
+ * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * or to a parent if there are multiple elements to show.
+ */
+
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #717171;
+  background-color: #f9f9f9;
+}

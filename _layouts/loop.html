@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="page">
+  <h1 class="page-title">/{{ page.title }}/</h1>
+  <hr>
+  <div class="body">
+    {{ content }}
+
+    {% assign years = site.pages | where: 'layout', page.type | group_by_exp: 'item', 'item.date | date: "%Y"' | sort: 'name' | reverse %}
+    {% for year in years %}
+    {% if year.size > 0 %}
+    <h4>{{ year.name }}</h4>
+    <ul>
+      {% assign pages = year.items | sort: 'date' | reverse %}
+      {% for page in pages %}
+        <li>
+          <h3>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            <small>({{ page.date }})</small>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+    <hr>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>

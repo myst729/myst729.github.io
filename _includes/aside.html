@@ -1,0 +1,24 @@
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+<div class="sidebar">
+  <div class="sidebar-item">
+    <img src="{{ site.avatar | relative_url }}">
+    <br>
+    <p>Something about...</p>
+  </div>
+  <nav class="sidebar-nav">
+    {% for item in site.links %}
+    <a class="sidebar-nav-item{% if page.title == item %} active{% endif %}" href="{{ item | relative_url }}/">
+      <i class="fontello icon-{{ item }}"></i> /{{ item }}/</a>
+    {% endfor %}
+  </nav>
+  <div class="sidebar-item">
+    <p>Find me on...</p>
+  </div>
+  <nav class="sidebar-nav">
+    {% for item in site.social %}
+    <a class="sidebar-nav-item" href="{{ item[1] }}" target="_blank">
+      <i class="fontello icon-{{ item[0] }}"></i> {{ item[0] }}</a></li>
+    {% endfor %}
+  </nav>
+</div>
