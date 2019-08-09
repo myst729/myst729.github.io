@@ -354,9 +354,16 @@ a.sidebar-nav-item:focus {
     padding-right: 1.5rem;
   }
 }
+
 .sidebar img {
   border: none;
-  width: 5rem;
+  width: 4rem;
+}
+
+@media (min-width: 30em) {
+  .sidebar img {
+    width: 5rem;
+  }
 }
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
@@ -565,6 +572,12 @@ a.sidebar-nav-item:focus {
   font-size: .75em;
   font-weight: 700;
 }
+.toc-title:before {
+  content: '';
+  display: block;
+  height: 5rem;
+  margin-top: -5rem;
+}
 .toc-title:after {
   content: '';
   margin-left: .75em;
@@ -578,10 +591,10 @@ a.sidebar-nav-item:focus {
   border-left-color: #515151;
   border-bottom-width: .4em;
 }
-.toc-box {
+.toc-anchors {
   margin-top: .5em;
 }
-.toc-collapse .toc-box {
+.toc-collapse .toc-anchors {
   display: none;
 }
 .toc-anchor {
@@ -611,8 +624,8 @@ a.sidebar-nav-item:focus {
 .toc-target h6:before {
   content: '';
   display: block;
-  height: 5rem;
-  margin-top: -5rem;
+  height: 4.56rem;
+  margin-top: -4.56rem;
 }
 .toc-back {
   cursor: pointer;
