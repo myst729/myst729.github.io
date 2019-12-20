@@ -6,7 +6,7 @@ title: dg
 tagline: just another ordinary coder
 avatar: /assets/avatar.png
 baseurl: /
-excerpt_separator: <!--more-->
+excerpt_separator: <!-- more -->
 
 links: ['posts', 'projects', 'slides', 'books', 'music']
 
