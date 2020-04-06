@@ -18,6 +18,11 @@
         <li><a href="{{ item[1] }}" target="_blank"><i class="fontello icon-{{ item[0] }}"></i></a></li>
         {% endfor %}
       </ul>
+      <div class="home-secrets">
+        {% for item in site.secrets %}
+        <a href="{{ item | relative_url }}/">{{ item }}</a>
+        {% endfor %}
+      </div>
     </div>
   </body>
 </html>

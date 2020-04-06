@@ -34,7 +34,7 @@ You don’t agree? Well, maybe I was wrong. You do like tons of dead feature bra
 
 <img src="images/02-dead-branches.jpg" width="360" />
 
-Another problem is about cooperation details. Teamwork is very common in real projects. The log graph may typically reach such a state. Do notice that PR #4 and #5 are branched from the same commit `06dc3f0`, while #6 is branched from `caac9d9` and #7 from `18e7f8e`. They’re very different – #4 and #5 are developed in parallel, #6 is a prerequisite for #7.
+Another problem is about cooperation details. Teamwork is very common in real projects. The log graph may typically reach such a state. Do notice that PR #4 and #5 are branched from the same commit `858dae7`, while #6 is branched from `bedc96c` and #7 from `88aa5b1`. They’re very different – #4 and #5 are developed in parallel, #6 is a prerequisite for #7.
 
 <img src="images/03-squash-1.jpg" width="750" />
 

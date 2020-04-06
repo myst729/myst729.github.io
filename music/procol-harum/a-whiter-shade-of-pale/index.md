@@ -9,4 +9,4 @@ link: https://music.163.com/#/song?id=4239891
 
 ![A Whiter Shade Of Pale](images/a-whiter-shade-of-pale.jpg)
 
-P.S. 网易云音乐说我 2017 年听过的最老的歌是 1965 年的 The Sound Of Silence。实际上并不是，那是 Paul Simon 和 Art Garfunkel 两个老头 1990 年的现场演出。真正最老的就是这首 1967 年 Procol Harum 创作的 A Whiter Shade Of Pale。
+P.S. [2018-01-12] 网易云音乐说我 2017 年听过的最老的歌是 1965 年的 The Sound Of Silence。实际上并不是，那是 Paul Simon 和 Art Garfunkel 两个老头 1990 年的现场演出。真正最老的就是这首 1967 年 Procol Harum 创作的 A Whiter Shade Of Pale。

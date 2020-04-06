@@ -9,6 +9,7 @@ baseurl: /
 excerpt_separator: <!-- more -->
 
 links: ['posts', 'projects', 'slides', 'books', 'music']
+secrets: ['splash']
 
 social:
   weibo: https://weibo.com/myst729

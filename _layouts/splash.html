@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Splash</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      span {
+        cursor: pointer;
+        display: block;
+        height: 40px;
+        width: 40px;
+        font-size: 32px;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        z-index: 1000;
+      }
+      p {
+        font-family: Verdana, sans-serif;
+        text-align: center;
+      }
+      p.landscape {
+        transform: rotate(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <span>🔄</span>
+    <p></p>
+    <script>
+      (global => {
+        let body = document.body
+        let span = body.querySelector('span')
+        let p = body.querySelector('p')
+
+        let getParams = key => {
+          return location.search
+            .replace(/^\?/, '')
+            .split('&')
+            .filter(kv => kv.startsWith(`${key}=`))
+            .map(kv => decodeURIComponent(kv.replace(new RegExp(`^${key}=`), '').trim()))
+        }
+
+        let resizeText = () => {
+          p.style.fontSize = 'initial'
+          let { height: bHeight, width: bWidth } = body.getBoundingClientRect()
+          let { height: cHeight, width: cWidth } = p.getBoundingClientRect()
+          let fontSize = Math.floor(Math.min(bHeight/cHeight, bWidth/cWidth) * 14.4)
+          p.style.fontSize = fontSize + 'px'
+        }
+
+        if (getParams('rotate').length > 0) {
+          p.classList.add('landscape')
+        }
+        document.title = p.innerHTML = getParams('text').join('<br>') || 'Hello World!'
+        resizeText()
+
+        span.addEventListener('click', e => {
+          p.classList.toggle('landscape')
+          resizeText()
+        })
+      })(this)
+    </script>
+  </body>
+</html>
