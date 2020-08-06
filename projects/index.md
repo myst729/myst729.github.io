@@ -3,6 +3,14 @@ layout: page
 title: projects
 ---
 
+## [Xtrm](https://github.com/myst729/xtrm)
+
+极限无边框设计的 40% 机械键盘，运行 [QMK](https://github.com/myst729/qmk_firmware/tree/master/keyboards/dg/xtrm) 固件。旋钮可以实现翻页、音量/亮度调节、桌面切换等功能，兼具功能性和可玩性。
+
+![Xtrm Keyboard](images/xtrm-keyboard.jpg)
+
+---
+
 ## [Vuelog](https://github.com/myst729/Vuelog)
 
 基于 Vue.js 的无后端博客系统。关于项目的起因和设计思路，请阅读[这个工单](https://github.com/myst729/Vuelog/issues/6)。
