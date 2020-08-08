@@ -22,6 +22,7 @@ html {
   font-family: Corbel, Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Bitstream Vera Sans, Liberation Sans, Verdana, Verdana Ref, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 @media (min-width: 38em) {
   html {
@@ -650,6 +651,45 @@ a.sidebar-nav-item:focus {
   border-left: .4em solid transparent;
   border-right: .4em solid transparent;
   border-bottom: .8em solid #505050;
+}
+
+
+/*
+ * Fly to the Top
+ */
+.fly {
+  user-select: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  line-height: 0;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.fly svg {
+  height: 48px;
+  width: 48px;
+  opacity: 0.36;
+  transition: opacity 0.5s ease;
+}
+.fly circle {
+  fill: #202020;
+}
+.fly path {
+  fill: #fff;
+}
+.fly:hover svg {
+  opacity: 1;
+}
+@media print {
+  .fly {
+    display: none;
+  }
 }
 
 
