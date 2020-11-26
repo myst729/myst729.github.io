@@ -5,6 +5,7 @@ sass:
 title: dg
 tagline: just another ordinary coder
 avatar: /assets/avatar.png
+favicon: /assets/logo.png
 baseurl: /
 excerpt_separator: <!-- more -->
 
