@@ -157,6 +157,14 @@ blockquote {
 blockquote p:last-child {
   margin-bottom: 0;
 }
+cite {
+  display: block;
+  text-align: right;
+}
+cite:before {
+  content: '—';
+  margin-right: .4em;
+}
 @media (min-width: 30em) {
   blockquote {
     padding-right: 5rem;

@@ -4,7 +4,11 @@ title: Why I’m against merging pull requests in squash mode or rebase mode?
 date: 2019-07-10
 ---
 
-GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one true (or no) option – the **merge mode**.
+> You can check out any time you like, but you can never leave.
+>
+> <cite>“Hotel California”, The Eagles</cite>
+
+__The post is opinionated!__ GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one true (or no) option – the **merge mode**.
 
 ## A quick comparison.
 
@@ -54,7 +58,7 @@ Development details are retained after housekeeping work. But cooperation detail
 
 <img src="images/04-rebase-2-cleaned.jpg" width="750" />
 
-You may want to argue that all the details are just hidden, not lost since they could be found on GitHub. As of the merged PRs, true. But that’s not reliable, you’ll get it once you have migrated repositories to another platform. Even forking a repository on GitHub could make the hidden details untraceable.
+You may want to argue that all the details are just hidden, not lost since they could be found on GitHub. As of the merged PRs, true. But that’s not reliable, you’ll get it once you have migrated repositories to another platform. Even forking a repository on GitHub could make the hidden details untraceable, in a way.
 
 The only reliable approach is, to retain all the details in a closed cycle within the git repository. That being said, GitHub (or GitLab, BitBucket, etc.) is, and should be, just an opt-in. How could that happen?
 
@@ -160,10 +164,11 @@ To be clear, I tagged the commits before and after `git pull --rebase`. What if 
 
 Conflicts? Not quite like that – just two sequentially developed features. Information lost again. And more importantly, the git history fails to fit the facts.
 
-## Are squash mode and rebase mode completely wrong?
+## Are rebase and squash completely wrong?
 
-Well, sometimes we don’t have to keep every piece of information. For those cases, applying squash mode or rebase mode
-may cause information loss, which is of little significance. For instance, bumping the version number, adding a license agreement, fixing typos in changelog, etc. However, these cases are absolutely minority during the whole project development. On the other hand, some of them could be resolved offline as well, such as typos.
+No, that’s not what I’m trying to sell. Sometimes we don’t have to keep every piece of (distracting) information. For those cases, rebase and squash may cause information loss, which is fine. For instance, a series of dependency updates, fixing typos in changelog, etc. Personally, I use `rebase` a lot to resolve such issues offline. In rare cases, I also use `rebase --onto` to fix wrong branching and merging (may cause code loss, which is not a bug if you know how git works).
+
+I’m just suggesting that “not using rebase mode and squash mode to merge a PR on GitHub”. They form a well-design model together with [GitHub Flow](https://guides.github.com/introduction/flow/) (which is good) that ties you or your team to the platform (which is not so good).
 
 ## Conclusion.
 
