@@ -6,9 +6,13 @@ date: 2019-07-10
 
 > You can check out any time you like, but you can never leave.
 >
-> <cite>“Hotel California”, The Eagles</cite>
+> <cite>“Hotel California”, the Eagles</cite>
 
-__The post is opinionated!__ GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one true (or no) option – the **merge mode**.
+## [DISCLAIMER]
+
+1. __The post is opinionated!__ GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one true (or no) option – the **merge mode**.
+
+2. After being heckled by so many pathetic people who consider English as a privilege of westerners, let’s make this clear. __I am Chinese and I wrote this post in English.__ If you cannot read this, learn English. It’s not my fault.
 
 ## A quick comparison.
 
