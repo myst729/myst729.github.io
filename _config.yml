@@ -3,7 +3,8 @@ sass:
   style: :compressed
 
 title: dg
-tagline: just another ordinary coder
+typeof: ({}).toString.call(dg)
+tagline: // "[object WebDev]"
 avatar: /assets/avatar.png
 favicon: /assets/logo.png
 baseurl: /

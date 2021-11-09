@@ -272,6 +272,7 @@ tbody tr:nth-child(odd) th {
   color: #505050;
 }
 .masthead-title small {
+  font-family: Menlo, Consolas, Monaco, Courier New, Courier, monospace;
   font-size: 75%;
   font-weight: 400;
   color: #c0c0c0;
@@ -476,7 +477,12 @@ a.sidebar-nav-item:focus {
   text-align: center;
 }
 .home h1 {
-  font-size: 8em;
+  font-size: 7em;
+}
+.home pre {
+  font-size: .7em;
+  margin: 0;
+  padding: .7em;
 }
 .home ul {
   display: block;
