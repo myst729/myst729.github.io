@@ -9,4 +9,4 @@ link: https://music.163.com/#/song?id=472045191
 
 ![Queen - Don’t Stop Me Now](images/queen-don-t-stop-me-now.jpg)
 
-直到「Don’t Stop Me Now」和「The Show Must Go On」响起，才觉得有了 Queen 的“味道”……因为那确实是 Queen，无可替代。
+直到「Don’t Stop Me Now」和「The Show Must Go On」响起，才觉得有了 Queen 的“味道”……那确实是 Freddie，无可替代。
