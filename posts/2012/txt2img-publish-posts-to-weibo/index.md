@@ -1,6 +1,7 @@
 ---
 layout: post
 title: txt2img — 把 WordPress 文章发布到新浪微博
+tag: [coding, red]
 date: 2012-02-14
 ---
 

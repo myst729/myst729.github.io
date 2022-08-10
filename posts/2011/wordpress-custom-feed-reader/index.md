@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 利用 WordPress 自定义抓取外部 Feed 源
+tag: [coding, red]
 date: 2011-11-30
 ---
 

@@ -1,31 +1,16 @@
+<a id="fly" href="#">
+  <svg height="48" width="48" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="24"></circle>
+    <path d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"></path>
+  </svg>
+</a>
 <script>
-void function (win, doc, undef) {
-  var fly = doc.createElement('a')
-  fly.className = 'fly'
-  fly.href = '#'
+((win, doc, undef) => {
+  let fly = doc.getElementById('fly')
 
-  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-  svg.setAttributeNS(null, 'height', '48')
-  svg.setAttributeNS(null, 'width', '48')
-  svg.setAttributeNS(null, 'viewBox', '0 0 48 48')
-
-  var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
-  circle.setAttributeNS(null, 'cx', '24')
-  circle.setAttributeNS(null, 'cy', '24')
-  circle.setAttributeNS(null, 'r', '24')
-
-  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-  path.setAttributeNS(null, 'd', 'M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z')
-
-  svg.appendChild(circle)
-  svg.appendChild(path)
-  fly.appendChild(svg)
-  doc.body.appendChild(fly)
-
-  doc.addEventListener('scroll', e => {
-    var across = win.scrollY > 1000
-    fly.style.pointerEvents = across ? 'all' : 'none'
-    fly.style.opacity = across ? '1' : '0'
+  doc.addEventListener('scroll', (e) => {
+    let across = win.scrollY > 1500
+    fly.className = across ? 'visible' : ''
   }, { capture: true, passive: true })
-}(window, document)
+})(window, document)
 </script>

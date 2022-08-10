@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Android 设备 Chrome 远程调试
+tag: [dev, red]
 date: 2013-07-21
 ---
 
@@ -72,7 +73,7 @@ adb forward tcp:9919 localabstract:chrome_devtools_remote
 
 ![GFWed](images/gfwed.png)
 
-原因是 *appspot.com* 很早以前就被墙掉了，所以我们还得自备梯子。翻过墙以后，终于看到了远程调试页面，和 Chrome 内置的调试工具一模一样：
+原因是 *appspot.com* 很早以前就被墙掉了，所以我们还得自备梯子。翻过墙以后，终于看到了远程调试页面，和调试 PC 页面的体验一模一样：
 
 ![PC Inspector 1](images/pc-inspector-1.png)
 
@@ -104,7 +105,7 @@ adb forward tcp:9919 localabstract:chrome_devtools_remote
 
 2. ~~翻墙后看到的调试界面和 Chrome 内置的调试工具非常像，那我们能不能直接调用内置的调试工具，从而免去翻墙的周折呢？答案是可以的，只需要替换远程调试页面的协议和路径。比如原先需要翻墙的地址是：**http://chrome-devtools-frontend.appspot.com/static/28.0.1500.64/devtools.html**?ws=localhost:9919/devtools/page/6C75490A-5E7A-DA49-A82B-5CD233CAF1B1，只要把加粗的部分替换成 **chrome-devtools://devtools/devtools.html**，就可以不用翻墙直接打开。~~改协议的路子已经被堵死了，同学们还是老老实实翻墙吧……
 
-  ![PC Inspector 4](images/pc-inspector-4.png)
+   ![PC Inspector 4](images/pc-inspector-4.png)
 
 3. 最近 Chrome Web Store 推出了一个新的 Chrome 扩展，就叫 [ADB](https://chrome.google.com/webstore/detail/adb/dpngiggdglpdnjdoaefidgiigpemgage)。安装这个扩展后，我们既不需要下载庞大的 ADT Bundle，也不用在命令行输入那些难记的指令，只要点几下鼠标就可以开始远程调试！具体的用法请看[这里](https://developers.google.com/chrome-developer-tools/docs/remote-debugging#remote-debugging-beta)。
 

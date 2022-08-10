@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why I’m against merging pull requests in squash mode or rebase mode?
+tag: [git, red]
 date: 2019-07-10
 ---
 

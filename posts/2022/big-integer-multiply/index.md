@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 超出 Number 类型安全范围的大整数相乘
+tag: [coding, red]
 date: 2022-08-09
 ---
 

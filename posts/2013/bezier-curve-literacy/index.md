@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 贝塞尔曲线扫盲
+tag: [math, yellow]
 date: 2013-11-28
 ---
 

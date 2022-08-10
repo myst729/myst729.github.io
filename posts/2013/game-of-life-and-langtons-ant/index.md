@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 生命游戏和兰顿蚂蚁
+tag: [math, yellow]
 date: 2013-09-30
 ---
 

@@ -16,5 +16,5 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.add_dependency 'jekyll', '> 3.8'
-  spec.add_runtime_dependency 'jekyll-github-metadata', '~> 2.12'
+  spec.add_dependency 'jekyll-minifier', '~> 0.1'
 end

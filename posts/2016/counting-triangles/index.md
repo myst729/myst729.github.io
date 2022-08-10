@@ -1,18 +1,19 @@
 ---
 layout: post
 title: 计算三角形个数
+tag: [math, yellow]
 date: 2016-10-02
 ---
 
-前两天看到条[微博](https://weibo.com/1918021250/EaAnvy7Dk)，说有条日推，声称可以数出 18 个三角形就算是智商达到 120 的天才。
+前两天看到条微博，说有条日推，声称可以数出 18 个三角形就算是智商达到 120 的天才。
 
 ![weibo](images/weibo.png)
 
-找来找去，只在 Facebook 看到一条[类似](https://www.facebook.com/jp.vonvon.me/photos/pb.793638357385586.-2207520000.1461821073./995672220515531/)的，然而并没有提到智商什么的。
+找来找去，只在 Facebook 看到一条类似的，然而并没有提到智商什么的。
 
 ![facebook](images/facebook.png)
 
-日推上找到的[这条](https://twitter.com/koukousei_wa/status/727877849739202563)要求更低，天才的标准直降 8 个，好划算啊！
+日推上找到的这条要求更低，天才的标准直降 8 个，好划算啊！
 
 ![twitter](images/twitter.png)
 

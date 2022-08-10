@@ -1,17 +1,26 @@
 # theme: jekyll-theme-myst729
+
 sass:
   style: :compressed
+
+plugins:
+  - jekyll-minifier
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
 
 title: dg
 typeof: ({}).toString.call(dg)
 tagline: // "[object WebDev]"
-avatar: /assets/avatar.png
-favicon: /assets/logo.png
 baseurl: /
+herolink: posts
 excerpt_separator: <!-- more -->
 
-links: ['posts', 'projects', 'slides', 'books', 'music']
-secrets: ['splash']
+avatar:
+  png: /assets/avatar.png
+  svg: /assets/avatar.svg
+  anim: /assets/avatar-animation.svg
 
 social:
   weibo: https://weibo.com/myst729

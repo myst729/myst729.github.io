@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A* 寻路算法
+tag: [coding, red]
 date: 2014-11-19
 ---
 

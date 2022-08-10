@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《程序员必读之软件架构》译者序
+tag: [books, yellow]
 date: 2014-10-09
 ---
 

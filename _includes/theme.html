@@ -1,0 +1,15 @@
+<label class="theme-switch" for="toggle">
+  <input type="checkbox" id="toggle" />
+  <div class="slider"></div>
+</label>
+<script>
+((win, doc, undef) => {
+  const toggle = doc.getElementById('toggle')
+  toggle.checked = (localStorage.getItem('theme') === 'dark')
+  toggle.addEventListener('change', (e) => {
+    const theme = e.target.checked ? 'dark' : 'light'
+    doc.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, false)
+})(window, document)
+</script>

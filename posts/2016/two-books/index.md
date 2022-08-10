@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 两本书
+tag: [books, yellow]
 date: 2016-12-31
 ---
 

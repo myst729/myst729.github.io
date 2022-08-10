@@ -1,8 +1,11 @@
 ---
 layout: post
 title: 前端生产环境部署 ES6 代码
+tag: [dev, red]
 date: 2018-05-25
 ---
+
+> 本文由 2017 年 12 月受邀在上海 GIAC 分享的主题[《前端生产环境部署 ES6 代码》](files/deploying-es6-in-production.pdf)整理而成。2018 年 5 月再次到百姓网分享。
 
 ## 背景
 
@@ -138,7 +141,7 @@ date: 2018-05-25
 
 - 构建工具 Webpack 内置的代码压缩工具不能识别 ES6 代码。
 
-  Webpack 内置的 [UglifyJS 插件](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) 版本非常低，实际上 UglifyJS 早就支持对 ES6 的解析了。引入一个更新的 UglifyJS 插件即可。
+  Webpack 内置 UglifyJS 插件的版本非常低，实际上 UglifyJS 早就支持对 ES6 的解析了。引入一个更新的 UglifyJS 插件即可。
 
   ```js
   const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -194,7 +197,7 @@ date: 2018-05-25
 
   ![Can I Use - script type module](images/can-i-use-script-type-module.png)
 
-  看看 Can I Use 的[数据](https://www.caniuse.com/#feat=es6-module)，跟 ES6 兼容性表格相比，这差别也太大了，可以说惨不忍睹。那到底有多少用户真正地受到影响，被这个高门槛挡在外面？还是上线后看实际的用户数据吧。
+  看看 [Can I Use](https://www.caniuse.com/#feat=es6-module)，跟 ES6 兼容性表格相比，这差别也太大了，可以说惨不忍睹。那到底有多少用户真正地受到影响，被这个高门槛挡在外面？还是上线后看实际的用户数据吧。
 
 ---
 

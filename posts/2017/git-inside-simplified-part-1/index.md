@@ -1,6 +1,7 @@
 ---
 layout: post
 title: git inside --simplified --part 1
+tag: [git, red]
 date: 2017-06-22
 ---
 

@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Splash</title>
+    <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="512x512" />
     <style>
       body {
         display: flex;
@@ -37,17 +38,17 @@
     <span>🔄</span>
     <p></p>
     <script>
-      (global => {
-        let body = document.body
+      ((win, doc, undef) => {
+        let body = doc.body
         let span = body.querySelector('span')
         let p = body.querySelector('p')
 
-        let getParams = key => {
+        let getParams = (key) => {
           return location.search
             .replace(/^\?/, '')
             .split('&')
-            .filter(kv => kv.startsWith(`${key}=`))
-            .map(kv => decodeURIComponent(kv.replace(new RegExp(`^${key}=`), '').trim()))
+            .filter((kv) => kv.startsWith(`${key}=`))
+            .map((kv) => decodeURIComponent(kv.replace(new RegExp(`^${key}=`), '').trim()))
         }
 
         let resizeText = () => {
@@ -61,14 +62,14 @@
         if (getParams('rotate').length > 0) {
           p.classList.add('landscape')
         }
-        document.title = p.innerHTML = getParams('text').join('<br>') || 'Hello World!'
+        doc.title = p.innerHTML = getParams('text').join('<br>') || 'Hello World!'
         resizeText()
 
-        span.addEventListener('click', e => {
+        span.addEventListener('click', (e) => {
           p.classList.toggle('landscape')
           resizeText()
         })
-      })(this)
+      })(window, document)
     </script>
   </body>
 </html>

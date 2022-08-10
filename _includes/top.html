@@ -1,8 +1,20 @@
 <div class="masthead">
   <div class="container">
     <h3 class="masthead-title serif">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ site.avatar.svg | relative_url }}" />
+      </a>
       <small>{{ site.tagline }}</small>
     </h3>
+    <ul class="masthead-social">
+      {% for item in site.social %}
+      <li>
+        <a href="{{ item[1] }}" target="_blank">
+          <i class="fontello icon-{{ item[0] }}"></i>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% include theme.html %}
   </div>
 </div>
