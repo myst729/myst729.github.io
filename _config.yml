@@ -12,7 +12,7 @@ jekyll-minifier:
 
 title: dg
 typeof: ({}).toString.call(dg)
-tagline: // "[object WebDev]"
+tagline: '"[object WebDev]"'
 baseurl: /
 herolink: posts
 excerpt_separator: <!-- more -->

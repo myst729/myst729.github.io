@@ -3,10 +3,11 @@
   {% include head.html %}
   <body>
     <div class="wrap home">
+      {% include theme.html %}
       <a class="avatar" href="{{ site.herolink | relative_url }}">
         <img src="{{ site.avatar.anim | relative_url }}" />
       </a>
-      <pre>{{ site.typeof }} {{ site.tagline }}</pre>
+      <pre>{{ site.typeof }} // {{ site.tagline }}</pre>
       <hr>
       <ul class="home-social">
         {% for item in site.social %}
@@ -18,8 +19,5 @@
         {% endfor %}
       </ul>
     </div>
-    <!--
-    {% include theme.html %}
-    -->
   </body>
 </html>

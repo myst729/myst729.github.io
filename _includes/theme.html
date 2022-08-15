@@ -2,7 +2,8 @@
   <input type="checkbox" id="toggle" />
   <div class="slider"></div>
 </label>
-<script>
+
+<script defer>
 ((win, doc, undef) => {
   const toggle = doc.getElementById('toggle')
   toggle.checked = (localStorage.getItem('theme') === 'dark')

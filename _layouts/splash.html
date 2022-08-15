@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Splash</title>
-    <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="512x512" />
+    <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
     <style>
+      :root{
+        --color-primary: #333;
+        --color-reverse: #eee;
+      }
+      [data-theme="dark"] {
+        --color-primary: #eee;
+        --color-reverse: #333;
+      }
       body {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
         margin: 0;
+        background-color: var(--color-reverse);
+        color: var(--color-primary);
+        transition: background-color ease-out .25s;
       }
       span {
         cursor: pointer;
@@ -20,23 +31,71 @@
         height: 40px;
         width: 40px;
         font-size: 32px;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
         z-index: 1000;
+        user-select: none;
       }
       p {
         font-family: Verdana, sans-serif;
+        font-weight: 700;
         text-align: center;
+        user-select: none;
       }
       p.landscape {
         transform: rotate(90deg);
       }
+      .theme-switch {
+        position: fixed;
+        right: 90px;
+        bottom: 28px;
+        z-index: 1200;
+        display: block;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      }
+      .slider {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background-color: var(--color-primary);
+        border-radius: 12px;
+        width: 48px;
+        height: 24px;
+        padding: 4px;
+        cursor: pointer;
+        opacity: .75;
+        transition: background-color ease-out .25s, opacity ease-out .25s;
+      }
+      .slider:before {
+        content: '';
+        background-color: var(--color-reverse);
+        border-radius: 8px;
+        width: 16px;
+        height: 16px;
+        transition: background-color ease-out .25s, transform ease-out .25s;
+      }
+      #toggle {
+        display: none;
+      }
+      #toggle:checked + .slider:before {
+        transform: translateX(24px);
+      }
+      @media (hover: hover) {
+        .slider:hover {
+          opacity: 1;
+        }
+      }
     </style>
+    <script>
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    </script>
   </head>
   <body>
     <span>🔄</span>
     <p></p>
+    {% include theme.html %}
     <script>
       ((win, doc, undef) => {
         let body = doc.body
@@ -63,11 +122,11 @@
           p.classList.add('landscape')
         }
         doc.title = p.innerHTML = getParams('text').join('<br>') || 'Hello World!'
-        resizeText()
+        requestAnimationFrame(resizeText)
 
         span.addEventListener('click', (e) => {
           p.classList.toggle('landscape')
-          resizeText()
+          requestAnimationFrame(resizeText)
         })
       })(window, document)
     </script>
