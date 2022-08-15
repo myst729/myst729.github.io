@@ -2,19 +2,19 @@
   <div class="container">
     <h3 class="masthead-title serif">
       <a href="{{ '/' | relative_url }}">
-        <img src="{{ site.avatar.svg | relative_url }}" />
+        {% include avatar/avatar.svg %}
       </a>
       <small>{{ site.tagline }}</small>
     </h3>
     <ul class="masthead-social">
       {% for item in site.social %}
       <li>
-        <a href="{{ item[1] }}" target="_blank">
-          <i class="fontello icon-{{ item[0] }}"></i>
+        <a href="{{ item.url }}" target="_blank">
+          {% include icons/{{ item.id }}.svg %}
         </a>
       </li>
       {% endfor %}
     </ul>
-    {% include theme.html %}
+    {% include switch.html %}
   </div>
 </div>

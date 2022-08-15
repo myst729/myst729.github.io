@@ -1,15 +1,9 @@
-<label class="theme-switch" for="toggle">
-  <input type="checkbox" id="toggle" />
-  <div class="slider"></div>
-</label>
 <script>
-((win, doc, undef) => {
-  const toggle = doc.getElementById('toggle')
-  toggle.checked = (localStorage.getItem('theme') === 'dark')
-  toggle.addEventListener('change', (e) => {
-    const theme = e.target.checked ? 'dark' : 'light'
-    doc.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
-  }, false)
-})(window, document)
+  ((win, doc, undef) => {
+    const key = win.useLiteTheme ? 'liteTheme' : 'theme'
+    const storedTheme = localStorage.getItem(key)
+    const mql = win.matchMedia('(prefers-color-scheme: dark)')
+    const systemTheme = mql.matches ? 'dark' : 'light'
+    doc.documentElement.dataset.theme = storedTheme || systemTheme
+  })(window, document)
 </script>

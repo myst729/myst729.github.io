@@ -3,23 +3,21 @@
   {% include head.html %}
   <body>
     <div class="wrap home">
-      <a class="avatar" href="{{ site.herolink | relative_url }}">
-        <img src="{{ site.avatar.anim | relative_url }}" />
+      {% include switch.html %}
+      <a class="home-avatar" href="{{ site.herolink | relative_url }}">
+        {% include avatar/avatar-animation.svg %}
       </a>
-      <pre>{{ site.typeof }} {{ site.tagline }}</pre>
+      <pre>{{ site.typeof }}</pre>
       <hr>
       <ul class="home-social">
         {% for item in site.social %}
         <li>
-          <a href="{{ item[1] }}" target="_blank">
-            <i class="fontello icon-{{ item[0] }}"></i>
+          <a href="{{ item.url }}" target="_blank">
+            {% include icons/{{ item.id }}.svg %}
           </a>
         </li>
         {% endfor %}
       </ul>
     </div>
-    <!--
-    {% include theme.html %}
-    -->
   </body>
 </html>

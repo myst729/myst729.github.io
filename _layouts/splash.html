@@ -4,40 +4,119 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="color-scheme" content="light dark">
     <title>Splash</title>
-    <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="512x512" />
+    <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
     <style>
+      :root{
+        --color-primary: #333;
+        --color-reverse: #eee;
+      }
+      [data-theme="dark"] {
+        --color-primary: #eee;
+        --color-reverse: #333;
+      }
       body {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
         margin: 0;
+        background-color: var(--color-reverse);
+        color: var(--color-primary);
+        transition: background-color ease-out .3s;
       }
-      span {
+      .spinner {
         cursor: pointer;
         display: block;
-        height: 40px;
-        width: 40px;
-        font-size: 32px;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
+        height: 32px;
+        width: 32px;
+        position: fixed;
+        right: 28px;
+        bottom: 24px;
         z-index: 1000;
+        user-select: none;
+        opacity: .75;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        transform: rotate(0deg);
+        transition: transform ease .5s;
+      }
+      .spinner:active {
+        transform: rotate(180deg);
+        transition-duration: initial;
+      }
+      @media (hover: hover) {
+        .spinner:hover {
+          opacity: 1;
+        }
+      }
+      .spinner svg {
+        fill: var(--color-primary);
+        transition: fill ease-out .3s;
       }
       p {
         font-family: Verdana, sans-serif;
+        font-weight: 700;
         text-align: center;
+        user-select: none;
       }
       p.landscape {
         transform: rotate(90deg);
       }
+      .theme-switch-lite {
+        position: fixed;
+        right: 90px;
+        bottom: 28px;
+        z-index: 1200;
+        display: block;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      }
+      .slider {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background-color: var(--color-primary);
+        border-radius: 12px;
+        width: 48px;
+        height: 24px;
+        padding: 4px;
+        cursor: pointer;
+        opacity: .75;
+        transition: background-color ease-out .3s, opacity ease-out .3s;
+      }
+      .slider:before {
+        content: '';
+        background-color: var(--color-reverse);
+        border-radius: 8px;
+        width: 16px;
+        height: 16px;
+        transition: background-color ease-out .3s, transform ease-out .3s;
+      }
+      #toggle {
+        display: none;
+      }
+      #toggle:checked + .slider:before {
+        transform: translateX(24px);
+      }
+      @media (hover: hover) {
+        .slider:hover {
+          opacity: 1;
+        }
+      }
     </style>
+    <script>window.useLiteTheme = true</script>
+    {% include theme.html %}
   </head>
   <body>
-    <span>🔄</span>
+    <span class="spinner">
+      <svg viewBox="-10 -90 880 880">
+        <path d="M843 261q0-3 0-4-36-150-150-243t-267-93q-81 0-157 31t-136 88l-72-72q-11-11-25-11t-25 11-11 25v250q0 14 11 25t25 11h250q14 0 25-11t10-25-10-25l-77-77q40-36 90-57t105-20q74 0 139 37t104 99q6 10 30 66 4 13 16 13h107q8 0 13-6t5-12z m14 446v-250q0-14-10-25t-26-11h-250q-14 0-25 11t-10 25 10 25l77 77q-82 77-194 77-75 0-140-37t-104-99q-6-10-29-66-5-13-17-13h-111q-7 0-13 6t-5 12v4q36 150 151 243t268 93q81 0 158-31t137-88l72 72q11 11 25 11t26-11 10-25z" />
+      </svg>
+    </span>
     <p></p>
-    <script>
+    {% include switch-lite.html %}
+    <script defer>
       ((win, doc, undef) => {
         let body = doc.body
         let span = body.querySelector('span')
@@ -63,11 +142,11 @@
           p.classList.add('landscape')
         }
         doc.title = p.innerHTML = getParams('text').join('<br>') || 'Hello World!'
-        resizeText()
+        requestAnimationFrame(resizeText)
 
         span.addEventListener('click', (e) => {
           p.classList.toggle('landscape')
-          resizeText()
+          requestAnimationFrame(resizeText)
         })
       })(window, document)
     </script>

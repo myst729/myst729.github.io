@@ -2,19 +2,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="light dark">
   <title>
     {% if page.title == 'home' %}
-      {{ site.title }} {{ site.tagline }}
+      {{ site.title }} // {{ site.tagline }}
     {% elsif page.layout == 'loop' %}
       /{{ page.title }}/ &laquo; {{ site.title }}
     {% else %}
       {{ page.title }} &laquo; {{ site.title }}
     {% endif %}
   </title>
-  <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="512x512" />
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <script>
-  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
-  </script>
+  <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?v=' | relative_url }}">
+
+  {% for css in page.css %}
+  <link rel="stylesheet" href="{{ css | append_revision: '?v=' }}">
+  {% endfor %}
+
+  {% include theme.html %}
 </head>

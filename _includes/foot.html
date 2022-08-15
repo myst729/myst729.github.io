@@ -1,0 +1,20 @@
+{% for javascript in page.js %}
+<script src="{{ javascript }}"></script>
+{% endfor %}
+
+<a id="fly" href="#">
+  <svg viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="24"></circle>
+    <path d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"></path>
+  </svg>
+</a>
+
+<script defer>
+((win, doc, undef) => {
+  const fly = doc.getElementById('fly')
+  doc.addEventListener('scroll', (e) => {
+    const across = win.scrollY > 1500
+    fly.className = across ? 'visible' : ''
+  }, { capture: true, passive: true })
+})(window, document)
+</script>

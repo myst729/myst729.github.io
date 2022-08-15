@@ -1,18 +1,8 @@
 # theme: jekyll-theme-myst729
 
-sass:
-  style: :compressed
-
-plugins:
-  - jekyll-minifier
-
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
-
 title: dg
-typeof: ({}).toString.call(dg)
-tagline: // "[object WebDev]"
+typeof: Object.prototype.toString.call(dg)
+tagline: '"[object WebDev]"'
 baseurl: /
 herolink: posts
 excerpt_separator: <!-- more -->
@@ -23,6 +13,26 @@ avatar:
   anim: /assets/avatar-animation.svg
 
 social:
-  weibo: https://weibo.com/myst729
-  github: https://github.com/myst729
-  stackoverflow: https://stackoverflow.com/users/1032492
+  - id: github
+    url: https://github.com/myst729
+  - id: stackoverflow
+    url: https://stackoverflow.com/users/1032492
+
+social_inactive:
+  - id: weibo
+    url: https://weibo.com/myst729
+
+themes:
+  - auto
+  - light
+  - dark
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-minifier
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
