@@ -11,11 +11,12 @@ jekyll-minifier:
     harmony: true
 
 title: dg
-typeof: ({}).toString.call(dg)
+typeof: Object.prototype.toString.call(dg)
 tagline: '"[object WebDev]"'
 baseurl: /
 herolink: posts
 excerpt_separator: <!-- more -->
+repository: myst729/myst729.github.io
 
 avatar:
   png: /assets/avatar.png
@@ -23,6 +24,8 @@ avatar:
   anim: /assets/avatar-animation.svg
 
 social:
-  weibo: https://weibo.com/myst729
   github: https://github.com/myst729
   stackoverflow: https://stackoverflow.com/users/1032492
+
+social-deprecated:
+  weibo: https://weibo.com/myst729

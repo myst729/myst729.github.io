@@ -13,7 +13,7 @@
     {% endif %}
   </title>
   <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append_revision | relative_url }}">
   <script>
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
   </script>

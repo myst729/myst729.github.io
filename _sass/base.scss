@@ -399,7 +399,6 @@ tbody tr:nth-child(odd) th {
   }
   small {
     font-family: Menlo, Consolas, Monaco, Courier New, Courier, monospace;
-    // font-size: 75%;
     font-weight: 400;
     color: var(--text-dimmest);
     letter-spacing: 0;
@@ -428,12 +427,8 @@ tbody tr:nth-child(odd) th {
       height: 32px;
     }
     small {
-      font-size: 70%;
-      padding-left: 1em;
+      font-size: 75%;
     }
-  }
-  .masthead-social li {
-    font-size: 1.1em;
   }
 }
 
@@ -472,7 +467,8 @@ tbody tr:nth-child(odd) th {
   pre {
     font-size: .85em;
     margin: 0;
-    padding: .7em;
+    padding: 0.7em 1.2em;
+    border-radius: 7px;
   }
   hr {
     width: 90vw;
@@ -504,9 +500,6 @@ tbody tr:nth-child(odd) th {
     img {
       height: 192px;
       width: 192px;
-    }
-    pre {
-      font-size: .75em;
     }
   }
 }
