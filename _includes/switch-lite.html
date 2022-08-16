@@ -1,0 +1,27 @@
+<label class="theme-switch-lite" for="toggle">
+  <input type="checkbox" id="toggle" />
+  <div class="slider"></div>
+</label>
+
+<script defer>
+((win, doc, undef) => {
+  const toggle = doc.getElementById('toggle')
+  toggle.checked = doc.documentElement.dataset.theme === 'dark'
+
+  toggle.addEventListener('change', (e) => {
+    const selectedTheme = e.target.checked ? 'dark' : 'light'
+    localStorage.setItem('liteTheme', selectedTheme)
+    doc.documentElement.dataset.theme = selectedTheme
+  }, false)
+
+  const mql = win.matchMedia('(prefers-color-scheme: dark)')
+  mql.addEventListener('change', (e) => {
+    const storedTheme = localStorage.getItem('liteTheme')
+    const systemTheme = e.matches ? 'dark' : 'light'
+    if (!storedTheme) {
+      doc.documentElement.dataset.theme = systemTheme
+      toggle.checked = e.matches
+    }
+  }, false)
+})(window, document)
+</script>

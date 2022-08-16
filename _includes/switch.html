@@ -1,0 +1,47 @@
+<label class="theme-switch" for="select">
+  <input type="checkbox" id="select" />
+  {% for theme in site.themes %}
+  <div class="icon-{{ theme }}">
+    {% include icons/{{ theme }}.svg %}
+  </div>
+  {% endfor %}
+  <ul class="theme-switch-dropdown">
+    {% for theme in site.themes %}
+    <li class="theme-switch-option" data-option="{{ theme }}">
+      {% include icons/{{ theme }}.svg %}
+      <span>{{ theme | capitalize }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</label>
+
+<script>
+((win, doc, undef) => {
+  const storedTheme = localStorage.getItem('theme')
+  const themeSelect = doc.getElementById('select')
+  const themeOptions = doc.querySelectorAll('.theme-switch-option')
+  const mql = win.matchMedia('(prefers-color-scheme: dark)')
+  const bindSwitchAction = (el) => {
+    el.addEventListener('click', (e) => {
+      const option = el.dataset.option
+      themeSelect.dataset.active = option
+      if (option === 'auto') {
+        localStorage.removeItem('theme')
+        doc.documentElement.dataset.theme = mql.matches ? 'dark' : 'light'
+      } else {
+        localStorage.setItem('theme', option)
+        doc.documentElement.dataset.theme = option
+      }
+    }, false)
+  }
+
+  themeSelect.dataset.active = storedTheme || 'auto'
+  themeOptions.forEach(bindSwitchAction)
+  mql.addEventListener('change', (e) => {
+    const systemTheme = e.matches ? 'dark' : 'light'
+    if (themeSelect.dataset.active === 'auto') {
+      doc.documentElement.dataset.theme = systemTheme
+    }
+  }, false)
+})(window, document)
+</script>

@@ -1,5 +1,32 @@
 # theme: jekyll-theme-myst729
 
+title: dg
+typeof: Object.prototype.toString.call(dg)
+tagline: '"[object WebDev]"'
+baseurl: /
+herolink: posts
+excerpt_separator: <!-- more -->
+
+avatar:
+  png: /assets/avatar.png
+  svg: /assets/avatar.svg
+  anim: /assets/avatar-animation.svg
+
+social:
+  - id: github
+    url: https://github.com/myst729
+  - id: stackoverflow
+    url: https://stackoverflow.com/users/1032492
+
+social_inactive:
+  - id: weibo
+    url: https://weibo.com/myst729
+
+themes:
+  - auto
+  - light
+  - dark
+
 sass:
   style: :compressed
 
@@ -9,23 +36,3 @@ plugins:
 jekyll-minifier:
   uglifier_args:
     harmony: true
-
-title: dg
-typeof: Object.prototype.toString.call(dg)
-tagline: '"[object WebDev]"'
-baseurl: /
-herolink: posts
-excerpt_separator: <!-- more -->
-repository: myst729/myst729.github.io
-
-avatar:
-  png: /assets/avatar.png
-  svg: /assets/avatar.svg
-  anim: /assets/avatar-animation.svg
-
-social:
-  github: https://github.com/myst729
-  stackoverflow: https://stackoverflow.com/users/1032492
-
-social-deprecated:
-  weibo: https://weibo.com/myst729
