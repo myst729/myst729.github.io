@@ -508,12 +508,21 @@ tbody tr:nth-child(odd) th {
     width: 40px;
     height: 40px;
   }
+  .eyeball {
+    animation: spin both linear 7;
+    animation-timeline: scroll(root);
+  }
   small {
     font-family: Menlo, Consolas, Monaco, Courier New, Courier, monospace;
     font-weight: 400;
     color: var(--text-dimmest);
     letter-spacing: 0;
     padding-left: 1em;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(-360deg);
   }
 }
 .progress {
