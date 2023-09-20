@@ -9,7 +9,10 @@ Object.prototype.toString.call(dg) // "[object WebDev]"
 Leo Deng &copy; 2022
 
 <!--
+brew install rbenv ruby-build
+rbenv install 3.1.3
 sudo gem install bundler
 sudo bundler install
 bundle exec jekyll serve --livereload
+bundle exec jekyll build
 -->
