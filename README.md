@@ -6,7 +6,7 @@
 Object.prototype.toString.call(dg) // "[object WebDev]"
 ```
 
-Leo Deng &copy; 2022
+Leo Deng &copy; 2023
 
 <!--
 brew install rbenv ruby-build

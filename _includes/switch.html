@@ -1,7 +1,7 @@
-<label class="theme-switch" for="select">
-  <input type="checkbox" id="select" />
+<label class="theme-switch" for="theme-switch-select">
+  <input type="checkbox" id="theme-switch-select" />
   {% for theme in site.themes %}
-  <div class="icon-{{ theme }}">
+  <div class="theme-switch-icon theme-switch-icon-{{ theme }}">
     {% include icons/{{ theme }}.svg %}
   </div>
   {% endfor %}
@@ -17,8 +17,8 @@
 
 <script>
 ((win, doc, undef) => {
-  const storedTheme = localStorage.getItem('theme')
-  const themeSelect = doc.getElementById('select')
+  const storedTheme = localStorage.getItem('theme-value')
+  const themeSelect = doc.getElementById('theme-switch-select')
   const themeOptions = doc.querySelectorAll('.theme-switch-option')
   const mql = win.matchMedia('(prefers-color-scheme: dark)')
   const bindSwitchAction = (el) => {
@@ -26,10 +26,10 @@
       const option = el.dataset.option
       themeSelect.dataset.active = option
       if (option === 'auto') {
-        localStorage.removeItem('theme')
+        localStorage.removeItem('theme-value')
         doc.documentElement.dataset.theme = mql.matches ? 'dark' : 'light'
       } else {
-        localStorage.setItem('theme', option)
+        localStorage.setItem('theme-value', option)
         doc.documentElement.dataset.theme = option
       }
     }, false)
