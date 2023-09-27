@@ -1,5 +1,5 @@
 {% for javascript in page.js %}
-<script src="{{ javascript }}"></script>
+<script src="{{ javascript | append_revision: '?v=' }}"></script>
 {% endfor %}
 
 <a id="fly" href="#">
@@ -9,7 +9,7 @@
   </svg>
 </a>
 
-<script defer>
+<script>
 ((win, doc, undef) => {
   const fly = doc.getElementById('fly')
   doc.addEventListener('scroll', (e) => {

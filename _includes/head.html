@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>
-    {% if page.title == 'home' %}
+    {% if page.layout == 'home' %}
       {{ site.title }} // {{ site.tagline }}
     {% elsif page.layout == 'loop' %}
       /{{ page.title }}/ &laquo; {{ site.title }}
@@ -15,8 +15,8 @@
   <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?v=' | relative_url }}">
 
-  {% for css in page.css %}
-  <link rel="stylesheet" href="{{ css | append_revision: '?v=' }}">
+  {% for stylesheet in page.css %}
+  <link rel="stylesheet" href="{{ stylesheet | append_revision: '?v=' }}">
   {% endfor %}
 
   {% include theme.html %}

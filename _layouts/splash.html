@@ -72,7 +72,7 @@
         user-select: none;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       }
-      .slider {
+      .theme-switch-slider {
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -85,7 +85,7 @@
         opacity: .75;
         transition: background-color ease-out .3s, opacity ease-out .3s;
       }
-      .slider:before {
+      .theme-switch-slider:before {
         content: '';
         background-color: var(--color-reverse);
         border-radius: 8px;
@@ -93,14 +93,14 @@
         height: 16px;
         transition: background-color ease-out .3s, transform ease-out .3s;
       }
-      #toggle {
+      #theme-switch-toggle {
         display: none;
       }
-      #toggle:checked + .slider:before {
+      #theme-switch-toggle:checked + .theme-switch-slider:before {
         transform: translateX(24px);
       }
       @media (hover: hover) {
-        .slider:hover {
+        .theme-switch-slider:hover {
           opacity: 1;
         }
       }
@@ -116,7 +116,7 @@
     </span>
     <p></p>
     {% include switch-lite.html %}
-    <script defer>
+    <script>
       ((win, doc, undef) => {
         let body = doc.body
         let span = body.querySelector('span')

@@ -19,6 +19,7 @@
   --color-dimmest: #c0c0c0;
   --color-median: #717171;
   --color-heavy: #202020;
+  --color-shadow: #e0e0e0;
   --color-transparent: rgb(255, 255, 255, 0);
 }
 
@@ -36,6 +37,7 @@
   --color-dimmest: #666;
   --color-median: #aaa;
   --color-heavy: #e0e0e0;
+  --color-shadow: #000;
   --color-transparent: rgb(255, 255, 255, 0);
 }
 
@@ -62,12 +64,12 @@ body {
 html {
   font-family: Corbel, Lucida Grande, Lucida Sans Unicode, Lucida Sans, DejaVu Sans, Bitstream Vera Sans, Liberation Sans, Verdana, Verdana Ref, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.66;
   scroll-behavior: smooth;
 }
 @media (min-width: 38em) {
   html {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -221,7 +223,7 @@ cite:before {
 }
 @media (min-width: 30em) {
   blockquote {
-    padding-right: 5rem;
+    padding-right: 2rem;
     padding-left: 1.25rem;
   }
 }
@@ -269,9 +271,7 @@ tbody tr:nth-child(odd) th {
   position: relative;
   user-select: none;
   -webkit-tap-highlight-color: var(--color-transparent);
-  .icon-auto,
-  .icon-light,
-  .icon-dark {
+  &-icon {
     cursor: pointer;
     opacity: 0;
     transition: opacity ease-out .3s;
@@ -281,21 +281,23 @@ tbody tr:nth-child(odd) th {
     top: 0;
     left: 0;
     z-index: -1;
+    svg {
+      transition: fill ease-out .3s;
+    }
   }
   &-dropdown {
-    display: none;
-    background-color: var(--color-primary);
-    // border: 1px solid var(--color-dimmest);
+    background-color: var(--color-dim);
+    box-shadow: 0 0 5px 0 var(--color-shadow);
+    border: 1px solid var(--color-shadow);
     border-radius: .4rem;
-    box-shadow: 0 0 5px 0 var(--color-dimmest);
+    display: none;
     list-style: none;
     width: 6rem;
     margin: 0;
     padding: .4rem 0;
     position: absolute;
     right: 0;
-    top: 2rem;
-
+    top: 1.8rem;
   }
   &-option {
     margin: 0;
@@ -313,6 +315,9 @@ tbody tr:nth-child(odd) th {
     width: 1.25rem;
     height: 1.25rem;
     fill: var(--color-dimmest);
+    &:hover {
+      fill: var(--color-median);
+    }
   }
 }
 
@@ -322,11 +327,11 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-#select {
+#theme-switch-select {
   display: none;
-  &[data-active="auto"] ~ .icon-auto,
-  &[data-active="light"] ~ .icon-light,
-  &[data-active="dark"] ~ .icon-dark {
+  &[data-active="auto"] ~ .theme-switch-icon-auto,
+  &[data-active="light"] ~ .theme-switch-icon-light,
+  &[data-active="dark"] ~ .theme-switch-icon-dark {
     opacity: 1;
     z-index: 5;
   }
@@ -368,7 +373,7 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-.slider {
+.theme-switch-slider {
   display: flex;
   align-items: center;
   background-color: var(--color-dimmest);
@@ -388,9 +393,9 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-#toggle {
+#theme-switch-toggle {
   display: none;
-  &:checked + .slider:before {
+  &:checked + .theme-switch-slider:before {
     transform: translateX(24px);
   }
 }
@@ -400,12 +405,12 @@ tbody tr:nth-child(odd) th {
   .theme-switch-lite {
     position: fixed;
     top: 1.25rem;
-    right: 1.25rem;
+    right: 2rem;
   }
 }
 
 @media (hover: hover) {
-  .slider:hover {
+  .theme-switch-slider:hover {
     background-color: var(--color-median);
   }
 }
@@ -416,7 +421,7 @@ tbody tr:nth-child(odd) th {
     margin-left: .5rem;
     margin-right: 0;
   }
-  .slider {
+  .theme-switch-slider {
     width: 32px;
     height: 18px;
     padding: 3px;
@@ -425,7 +430,7 @@ tbody tr:nth-child(odd) th {
       height: 12px;
     }
   }
-  #toggle:checked + .slider:before {
+  #theme-switch-toggle:checked + .theme-switch-slider:before {
     transform: translateX(14px);
   }
 }
@@ -457,19 +462,19 @@ tbody tr:nth-child(odd) th {
   margin-left:  auto;
   margin-right: auto;
 }
-@media (min-width: 38em) {
+@media (min-width: 44em) {
   .container {
     max-width: 32rem;
   }
 }
-@media (min-width: 56em) {
+@media (min-width: 58em) {
   .container {
-    max-width: 38rem;
+    max-width: 44rem;
   }
 }
-@media (min-width: 68em) {
+@media (min-width: 74em) {
   .container {
-    max-width: 50rem;
+    max-width: 58rem;
   }
 }
 
@@ -568,6 +573,7 @@ tbody tr:nth-child(odd) th {
   }
   svg {
     fill: var(--color-dimmest);
+    transition: fill ease-out .3s;
     &:hover {
       fill: var(--color-median);
     }
@@ -589,14 +595,17 @@ tbody tr:nth-child(odd) th {
   .masthead {
     padding-top: .6rem;
     padding-bottom: .6rem;
-  }
-  .masthead-title {
-    svg {
-      width: 32px;
-      height: 32px;
+    &-title {
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+      small {
+        font-size: 75%;
+      }
     }
-    small {
-      font-size: 75%;
+    &-social li {
+      margin: 0 .36em;
     }
   }
   .progress {

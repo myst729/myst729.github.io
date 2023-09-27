@@ -10,13 +10,15 @@ excerpt_separator: <!-- more -->
 avatar:
   png: /assets/avatar.png
   svg: /assets/avatar.svg
-  anim: /assets/avatar-animation.svg
+  anima: /assets/avatar-animation.svg
 
 social:
   - id: github
     url: https://github.com/myst729
   - id: stackoverflow
     url: https://stackoverflow.com/users/1032492
+  - id: twitter
+    url: https://twitter.com/myst729
 
 social_inactive:
   - id: weibo
