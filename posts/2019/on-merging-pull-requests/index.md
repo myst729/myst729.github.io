@@ -11,7 +11,7 @@ date: 2019-07-10
 
 ## [DISCLAIMER]
 
-1. __The post is opinionated!__ GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one true (or no) option – the **merge mode**.
+1. __The post is opinionated!__ GitHub provides three different modes for PR merging. Each is described very clearly in the official doc “[About merge methods on GitHub](https://help.github.com/en/articles/about-merge-methods-on-github)”. I’m not going to repeat how they work under the hood. Rather, I’d try explaining why I think there should be only one option – the **merge mode**.
 
 2. After being heckled by so many pathetic people who consider English as a privilege of westerners, let’s make this clear. __I am Chinese and I wrote this post in English.__ If you cannot read this, learn English. It’s not my fault.
 
@@ -171,9 +171,9 @@ Conflicts? Not quite like that – just two sequentially developed features. Inf
 
 ## Are rebase and squash completely wrong?
 
-No, that’s not what I’m trying to sell. Sometimes we don’t have to keep every piece of (distracting) information. For those cases, rebase and squash may cause information loss, which is fine. For instance, a series of dependency updates, fixing typos in changelog, etc. Personally, I use `rebase` a lot to resolve such issues offline. In rare cases, I also use `rebase --onto` to fix wrong branching and merging (may cause code loss, which is not a bug if you know how git works).
+No, that’s not what I’m trying to sell. Sometimes we don’t have to keep every piece of (distracting) information. For those cases, rebase and squash may cause information loss, which is fine. For instance, a series of dependency updates, fixing typos in changelog, etc. Personally, I use `rebase` a lot to resolve such issues offline. In rare cases, I also use `rebase --onto` to fix wrong branching and merging (may cause code loss, which is not a bug if you know how git works in the nutshell).
 
-I’m just suggesting that “not using rebase mode and squash mode to merge a PR on GitHub”. They form a well-design model together with [GitHub Flow](https://guides.github.com/introduction/flow/) (which is good) that ties you or your team to the platform (which is not so good).
+I’m just suggesting that “not using rebase mode and squash mode to merge a PR on GitHub”. They form a well-design model together with [GitHub Flow](https://guides.github.com/introduction/flow/), but you lost history details. GitHub keeps a backup of your lost details in PR, then you or your team are tied to the platform (very smart business model, honestly).
 
 ## Conclusion.
 

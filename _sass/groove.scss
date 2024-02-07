@@ -77,7 +77,7 @@ body {
   color: var(--text-primary);
   background-color: var(--color-primary);
   text-size-adjust: 100%;
-  transition: background-color ease-out .3s;
+  transition: background-color ease-out .3s, color ease-out .3s;
 }
 
 h1,
@@ -93,6 +93,7 @@ h6 {
   margin-bottom: 1rem;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
+  transition: color ease-out .3s;
 }
 h1 {
   font-size: 2rem;
@@ -113,6 +114,7 @@ h6 {
 a {
   color: var(--text-link);
   text-decoration: none;
+  transition: color ease-out .3s;
 }
 a strong {
   color: inherit;
@@ -131,6 +133,7 @@ p {
 
 strong {
   color: var(--text-emphasise);
+  transition: color ease-out .3s;
 }
 
 /* Lists */
@@ -154,6 +157,7 @@ hr {
   border: 0;
   border-top: 1px solid var(--color-dim);
   border-bottom: 1px solid var(--color-sharp);
+  transition: border ease-out .3s;
 }
 
 abbr {
@@ -161,6 +165,7 @@ abbr {
   font-weight: bold;
   color: var(--text-emphasise);
   text-transform: uppercase;
+  transition: color ease-out .3s;
 }
 abbr[title] {
   cursor: help;
@@ -178,6 +183,7 @@ code {
   background-color: var(--color-dim);
   border: 1px solid var(--color-dimmer);
   border-radius: 3px;
+  transition: background-color ease-out .3s, color ease-out .3s, border ease-out .3s;
 }
 pre {
   display: block;
@@ -193,6 +199,7 @@ pre {
   background-color: var(--color-dim);
   border: 1px solid var(--color-dimmer);
   border-radius: .3em;
+  transition: background-color ease-out .3s, border ease-out .3s;
 }
 pre code {
   padding: 0;
@@ -209,6 +216,7 @@ blockquote {
   color: var(--text-dim);
   background-color: var(--color-dim);
   border-left: .25rem solid var(--color-dimmer);
+  transition: background-color ease-out .3s, color ease-out .3s, border ease-out .3s;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -238,6 +246,7 @@ img {
   padding: .3em;
   background-color: var(--color-dim);
   border: 1px solid var(--color-dimmest);
+  transition: background-color ease-out .3s, border ease-out .3s;
 }
 
 /* Tables */
@@ -246,15 +255,18 @@ table {
   width: 100%;
   border: 1px solid var(--color-dimmer);
   border-collapse: collapse;
+  transition: border ease-out .3s;
 }
 td,
 th {
   padding: .25rem .5rem;
   border: 1px solid var(--color-dimmer);
+  transition: border ease-out .3s;
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: var(--color-dim);
+  transition: background-color ease-out .3s;
 }
 
 
@@ -298,6 +310,7 @@ tbody tr:nth-child(odd) th {
     position: absolute;
     right: 0;
     top: 1.8rem;
+    transition: background-color ease-out .3s, box-shadow ease-out .3s, border ease-out .3s;
   }
   &-option {
     margin: 0;
@@ -308,6 +321,7 @@ tbody tr:nth-child(odd) th {
     span {
       margin-left: .7rem;
       color: var(--color-dimmest);
+      transition: color ease-out .3s;
     }
   }
   svg {
@@ -315,6 +329,7 @@ tbody tr:nth-child(odd) th {
     width: 1.25rem;
     height: 1.25rem;
     fill: var(--color-dimmest);
+    transition: fill ease-out .3s;
     &:hover {
       fill: var(--color-median);
     }
@@ -490,7 +505,7 @@ tbody tr:nth-child(odd) th {
   padding-bottom: .8rem;
   border-bottom: 1px solid var(--color-dim);
   background-color: var(--color-primary);
-  transition: background-color ease-out .3s;
+  transition: background-color ease-out .3s, border ease-out .3s;
   position: fixed;
   width: 100%;
   top: 0;
@@ -523,6 +538,7 @@ tbody tr:nth-child(odd) th {
     color: var(--text-dimmest);
     letter-spacing: 0;
     padding-left: 1em;
+    transition: color ease-out .3s;
   }
 }
 @keyframes spin {
@@ -713,6 +729,7 @@ tbody tr:nth-child(odd) th {
   display: block;
   margin-top: 1.5em;
   text-align: center;
+  transition: color ease-out .3s;
 }
 
 .loop-list {
@@ -763,6 +780,7 @@ tbody tr:nth-child(odd) th {
 .post-title {
   color: var(--text-emphasise);
   margin-top: 0;
+  transition: color ease-out .3s;
 }
 
 /* Meta data line below post title */
@@ -770,6 +788,7 @@ tbody tr:nth-child(odd) th {
   display: inline-block;
   font-size: .9em;
   color: var(--text-dim);
+  transition: color ease-out .3s;
 }
 
 .highlighter-rouge {
@@ -805,9 +824,11 @@ tbody tr:nth-child(odd) th {
   }
   circle {
     fill: var(--color-heavy);
+    transition: fill ease-out .3s;
   }
   path {
     fill: var(--color-primary);
+    transition: fill ease-out .3s;
   }
 }
 @media (max-width: 38em) {
