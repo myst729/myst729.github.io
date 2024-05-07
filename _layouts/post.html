@@ -4,7 +4,8 @@ layout: default
 
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <a href="{{ site.herolink | relative_url }}">/{{ site.herolink }}/</a>
+  {% assign url_paths = page.url | split: '/' %}
+  <a href="{{ url_paths[1] | relative_url }}">/{{ url_paths[1] }}/</a>
   <code class="post-tag post-tag-{{ page.tag[1] }}">{{ page.tag[0] }}</code>
   <span class="post-date">{{ page.date }}</span>
   <hr>

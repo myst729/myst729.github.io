@@ -3,11 +3,12 @@ layout: default
 ---
 
 <div class="page">
-  <h1 class="page-title">/{{ page.title }}/</h1>
+  <h1 class="page-title">{{ page.title }}</h1>
   <hr>
   <div class="body">
     {{ content }}
-    {% assign years = site.pages | where: 'layout', page.type | group_by_exp: 'item', 'item.date | date: "%Y"' | sort: 'name' | reverse %}
+    {% assign category = page.title %}
+    {% assign years = site.pages | where_exp: 'item', 'item.url contains category and item.layout == page.type and item.hide != true' | group_by_exp: 'item', 'item.date | date: "%Y"' | sort: 'name' | reverse %}
     {% for year in years %}
     {% if year.size > 0 %}
     <h4>{{ year.name }}</h4>

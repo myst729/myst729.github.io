@@ -20,6 +20,7 @@
   --color-median: #717171;
   --color-heavy: #202020;
   --color-shadow: #e0e0e0;
+  --color-highlight: #eeeba7;
   --color-transparent: rgb(255, 255, 255, 0);
 }
 
@@ -38,6 +39,7 @@
   --color-median: #aaa;
   --color-heavy: #e0e0e0;
   --color-shadow: #000;
+  --color-highlight: #57513d;
   --color-transparent: rgb(255, 255, 255, 0);
 }
 
@@ -89,8 +91,8 @@ h6 {
   font-weight: 400;
   color: var(--text-emphasise);
   letter-spacing: -.025rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
   transition: color ease-out .3s;
@@ -207,6 +209,9 @@ pre code {
   color: inherit;
   background-color: var(--color-transparent);
   border: 0 none;
+}
+.hll {
+  background-color: var(--color-highlight);
 }
 
 /* Quotes */

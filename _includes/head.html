@@ -4,13 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>
-    {% if page.layout == 'home' %}
-      {{ site.title }} // {{ site.tagline }}
-    {% elsif page.layout == 'loop' %}
-      /{{ page.title }}/ &laquo; {{ site.title }}
-    {% else %}
-      {{ page.title }} &laquo; {{ site.title }}
-    {% endif %}
+  {% if page.layout == 'home' %}
+    {{ site.title }} // {{ site.tagline }}
+  {% else %}
+    {{ page.title }} &laquo; {{ site.title }}
+  {% endif %}
   </title>
   <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?v=' | relative_url }}">

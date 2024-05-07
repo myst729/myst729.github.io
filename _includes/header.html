@@ -9,13 +9,19 @@
     </h3>
     <ul class="masthead-social">
       {% for item in site.social %}
-      <li>
-        <a href="{{ item.url }}" target="_blank">
-          {% include icons/{{ item.id }}.svg %}
-        </a>
-      </li>
+        {% if item.inactive != true %}
+        <li>
+          <a href="{{ item.url }}" target="_blank">
+            {% include icons/{{ item.id }}.svg %}
+          </a>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
-    {% include switch.html %}
+    {% if site.themes == 'lite' %}
+      {% include switch-lite.html %}
+    {% else %}
+      {% include switch.html %}
+    {% endif %}
   </div>
 </div>
