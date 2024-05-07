@@ -11,11 +11,13 @@
       <hr>
       <ul class="home-social">
         {% for item in site.social %}
+        {% if item.inactive != true %}
         <li>
           <a href="{{ item.url }}" target="_blank">
             {% include icons/{{ item.id }}.svg %}
           </a>
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>

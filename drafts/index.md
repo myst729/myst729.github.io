@@ -1,5 +1,5 @@
 ---
 layout: loop
-title: /posts/
+title: /drafts/
 type: post
 ---

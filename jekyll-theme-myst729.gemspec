@@ -15,6 +15,6 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.license       = 'MIT'
 
-  spec.add_dependency 'jekyll', '~> 4.2'
+  spec.add_dependency 'jekyll', '~> 4.3'
   spec.add_dependency 'jekyll-minifier', '~> 0.1'
 end

@@ -3,6 +3,7 @@ layout: post
 title: CSSConf China, from 0 to 1
 tag: [events, yellow]
 date: 2015-01-13
+hide: true
 ---
 
 > Whether you agree or not, CSS plays an important role in a web developer’s skill set.

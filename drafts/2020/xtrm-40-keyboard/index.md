@@ -3,6 +3,7 @@ layout: post
 title: 键盘手作入门
 tag: [diy, green]
 date: 2020-08-06
+hide: true
 ---
 
 本文不是硬核教学，没有干货，略带安利向。tl;dr 先上完成图。

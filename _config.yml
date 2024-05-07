@@ -19,15 +19,11 @@ social:
     url: https://stackoverflow.com/users/1032492
   - id: twitter
     url: https://twitter.com/myst729
-
-social_inactive:
   - id: weibo
     url: https://weibo.com/myst729
+    inactive: true
 
-themes:
-  - auto
-  - light
-  - dark
+themes: standard # lite, standard
 
 sass:
   style: :compressed

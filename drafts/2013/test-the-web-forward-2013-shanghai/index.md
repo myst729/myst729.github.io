@@ -3,6 +3,7 @@ layout: post
 title: Test the Web Forward 2013 @ Shanghai
 tag: [events, yellow]
 date: 2013-08-28
+hide: true
 ---
 
 [Test the Web Forward](http://testthewebforward.org/)（简称 TTWF）是 W3C 会员单位 Adobe 和 W3C 联合主办的一个极限编程活动，意在让关注 web 标准的开发者直接参与到 Web 标准的贡献中去。在这个活动中，开发者可以了解到最新的 Web 标准，并学习如何编写 W3C 测试用例，这些测试用例会帮助浏览器更一致地实现这些功能。自从 2012 年 6 月在旧金山第一次举办，一年来已经陆续在北京、巴黎、悉尼、西雅图、东京等全球多个城市开展。今年 TTWF 第二次来到中国，于 8 月 17、18 日两天在上海浦东博雅酒店举行，这次活动由另一家 W3C 会员单位百度独家承办。
