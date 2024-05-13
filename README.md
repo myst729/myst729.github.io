@@ -6,13 +6,13 @@
 Object.prototype.toString.call(dg) // "[object WebDev]"
 ```
 
-Leo Deng &copy; 2023
+Leo Deng &copy; 2024
 
 <!--
 brew install rbenv ruby-build
-rbenv install 3.1.3
+rbenv install 3.1.5
 sudo gem install bundler
-sudo bundler install
+sudo bundle install
 bundle exec jekyll serve --livereload
 bundle exec jekyll build
 -->
