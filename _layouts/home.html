@@ -7,7 +7,7 @@
       <a class="home-avatar" href="{{ site.herolink | relative_url }}">
         {% include avatar/avatar-animation.svg %}
       </a>
-      <pre>{{ site.typeof }}</pre>
+      {% highlight javascript %}{{ site.typeof }}{% endhighlight %}
       <hr>
       <ul class="home-social">
         {% for item in site.social %}
