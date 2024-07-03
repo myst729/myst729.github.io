@@ -725,7 +725,7 @@ tbody tr:nth-child(odd) th {
 
 .page,
 .post {
-  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 .page:after,
@@ -733,7 +733,7 @@ tbody tr:nth-child(odd) th {
   content: '— EOF —';
   color: var(--text-dimmest);
   display: block;
-  margin-top: 1.5em;
+  // margin-bottom: 1.5em;
   text-align: center;
   transition: color ease-out .3s;
 }
