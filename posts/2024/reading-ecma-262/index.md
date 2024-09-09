@@ -7,7 +7,7 @@ date: 2024-05-08
 
 ## JavaScript 这么废，连个字符串倒序都没有？
 
-自从多年以前入坑做码农，到现在不知道写了多少次字符串倒序的代码。然而，直到 2024 年，JavaScript 语言规范仍然没有提供一个标准的方法来做这件事。其实，相关讨论早已[持续多年](https://esdiscuss.org/topic/july-tc39-meeting-notes-day-1)。由于[种种原因](https://es.discourse.group/t/string-reverse-method/620)，社区始终无法给出一个完美的方案，标准化自然无从谈起。
+自从入坑做码农，到现在不知道写了多少次字符串倒序的代码。然而，直到 2024 年，JavaScript 语言规范仍然没有提供一个标准的方法来做这件事。其实，相关讨论早已[持续多年](https://esdiscuss.org/topic/july-tc39-meeting-notes-day-1)。由于[种种原因](https://es.discourse.group/t/string-reverse-method/620)，社区始终无法给出一个完美的方案，标准化自然无从谈起。
 
 ## 缩小范围，自己动手，低投入高回报
 
@@ -280,7 +280,7 @@ Array.prototype.map.call({ 0: 'a', 1: 'b', 2: 'c', length: 3 }, v => v.toUpperCa
 - 当操作的属性为 `length` 时，命中 1.a，进入 **10.4.2.4 ArraySetLength ( A, Desc )**，一长串逻辑就是在处理增删成员的各种情况
   ![](images/image37.png)
 
-接连看了几个案例，是不是有点头大。今天先到这里，相信你对**按需**阅读规范也有了一点点感觉。
+接连看了几个案例，是不是有点头大。今天先到这里，相信你对前面**按需阅读**的建议也有了一点点感觉。
 
 ## 一些建议和参考资料
 
