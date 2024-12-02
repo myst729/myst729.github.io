@@ -649,6 +649,7 @@ tbody tr:nth-child(odd) th {
   margin: 0 auto;
   width: 90vw;
   overflow: hidden;
+  user-select: none;
   &-avatar {
     margin-top: 1rem;
     margin-bottom: 2.4rem;
@@ -669,6 +670,7 @@ tbody tr:nth-child(odd) th {
     margin: 0;
     padding: 0.7em 1.2em;
     border-radius: 7px;
+    cursor: help;
   }
   hr {
     width: 90vw;

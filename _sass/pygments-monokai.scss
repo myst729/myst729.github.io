@@ -72,8 +72,9 @@
     .se  /* Literal.String.Escape */
     { color: #ae81ff }
 
-    .gh { } /* Generic Heading & Diff Header */
-    
+    .gh  /* Generic Heading & Diff Header */
+    { }
+
     .gd, /* Generic.Deleted & Diff Deleted */
     .kn, /* Keyword.Namespace */
     .nt, /* Name.Tag */
