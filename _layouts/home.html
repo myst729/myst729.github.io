@@ -24,10 +24,14 @@
     <script>
       ((win, doc, loc, undef) => {
         const hl = doc.querySelector('.highlight')
-        hl.addEventListener('click', (e) => {
+        hl.addEventListener('contextmenu', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
           loc.href = '/easter.html'
         }, false)
-        hl.addEventListener('dbclick', (e) => {
+        hl.addEventListener('dblclick', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
           loc.href = '/splash.html'
         }, false)
       })(window, document, location)

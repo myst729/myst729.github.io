@@ -649,6 +649,7 @@ tbody tr:nth-child(odd) th {
   margin: 0 auto;
   width: 90vw;
   overflow: hidden;
+  user-select: none;
   &-avatar {
     margin-top: 1rem;
     margin-bottom: 2.4rem;
