@@ -21,5 +21,32 @@
         {% endfor %}
       </ul>
     </div>
+    <script>
+      ((win, doc, loc, undef) => {
+        const hl = doc.querySelector('.highlight')
+        const jump = () => {
+          hl.dataset.click = ''
+          if (hl.dataset.dblclick === 'on') {
+            hl.dataset.dblclick = ''
+            loc.href = '/splash.html'
+          } else {
+            loc.href = '/easter.html'
+          }
+        }
+        hl.addEventListener('click', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          if (hl.dataset.click !== 'on') {
+            setTimeout(jump, 300)
+          }
+          hl.dataset.click = 'on'
+        }, false)
+        hl.addEventListener('dblclick', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          hl.dataset.dblclick = 'on'
+        }, false)
+      })(window, document, location)
+    </script>
   </body>
 </html>

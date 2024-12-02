@@ -117,25 +117,25 @@
     <p></p>
     {% include switch-lite.html %}
     <script>
-      ((win, doc, undef) => {
-        let body = doc.body
-        let span = body.querySelector('span')
-        let p = body.querySelector('p')
+      ((win, doc, loc, undef) => {
+        const body = doc.body
+        const span = body.querySelector('span')
+        const p = body.querySelector('p')
 
-        let getParams = (key) => {
-          return location.search
+        const getParams = (key) => {
+          return loc.search
             .replace(/^\?/, '')
             .split('&')
             .filter((kv) => kv.startsWith(`${key}=`))
             .map((kv) => decodeURIComponent(kv.replace(new RegExp(`^${key}=`), '').trim()))
         }
 
-        let resizeText = () => {
+        const resizeText = () => {
           p.style.fontSize = 'initial'
-          let { height: bHeight, width: bWidth } = body.getBoundingClientRect()
-          let { height: cHeight, width: cWidth } = p.getBoundingClientRect()
-          let fontSize = Math.floor(Math.min(bHeight/cHeight, bWidth/cWidth) * 14.4)
-          p.style.fontSize = fontSize + 'px'
+          const { height: bHeight, width: bWidth } = body.getBoundingClientRect()
+          const { height: cHeight, width: cWidth } = p.getBoundingClientRect()
+          const fontSize = Math.floor(Math.min(bHeight/cHeight, bWidth/cWidth) * 14.4)
+          p.style.fontSize = `${fontSize}px`
         }
 
         if (getParams('rotate').length > 0) {
@@ -147,8 +147,8 @@
         span.addEventListener('click', (e) => {
           p.classList.toggle('landscape')
           requestAnimationFrame(resizeText)
-        })
-      })(window, document)
+        }, false)
+      })(window, document, location)
     </script>
   </body>
 </html>
