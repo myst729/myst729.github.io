@@ -21,5 +21,16 @@
         {% endfor %}
       </ul>
     </div>
+    <script>
+      ((win, doc, loc, undef) => {
+        const hl = doc.querySelector('.highlight')
+        hl.addEventListener('click', (e) => {
+          loc.href = '/easter.html'
+        }, false)
+        hl.addEventListener('dbclick', (e) => {
+          loc.href = '/splash.html'
+        }, false)
+      })(window, document, location)
+    </script>
   </body>
 </html>
