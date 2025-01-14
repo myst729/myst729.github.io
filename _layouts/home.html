@@ -10,6 +10,11 @@
       {% highlight javascript %}{{ site.typeof }}{% endhighlight %}
       <hr>
       <ul class="home-social">
+        <li>
+          <a href="{{ site.myself.link | relative_url }}">
+            {% include icons/{{ site.myself.icon }}.svg %}
+          </a>
+        </li>
         {% for item in site.social %}
         {% if item.inactive != true %}
         <li>

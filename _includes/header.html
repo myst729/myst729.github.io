@@ -8,14 +8,19 @@
       <small>{{ site.tagline }}</small>
     </h3>
     <ul class="masthead-social">
+      <li>
+        <a href="{{ site.myself.link | relative_url }}">
+          {% include icons/{{ site.myself.icon }}.svg %}
+        </a>
+      </li>
       {% for item in site.social %}
-        {% if item.inactive != true %}
-        <li>
-          <a href="{{ item.url }}" target="_blank">
-            {% include icons/{{ item.id }}.svg %}
-          </a>
-        </li>
-        {% endif %}
+      {% if item.inactive != true %}
+      <li>
+        <a href="{{ item.url }}" target="_blank">
+          {% include icons/{{ item.id }}.svg %}
+        </a>
+      </li>
+      {% endif %}
       {% endfor %}
     </ul>
     {% if site.themes == 'lite' %}
