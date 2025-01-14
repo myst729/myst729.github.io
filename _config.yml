@@ -12,13 +12,17 @@ avatar:
   svg: /assets/avatar.svg
   anima: /assets/avatar-animation.svg
 
+myself:
+  icon: color
+  link: myself
+
 social:
   - id: github
     url: https://github.com/myst729
-  - id: stackoverflow
-    url: https://stackoverflow.com/users/1032492
   - id: twitter
     url: https://twitter.com/myst729
+  - id: stackoverflow
+    url: https://stackoverflow.com/users/1032492
   - id: weibo
     url: https://weibo.com/myst729
     inactive: true
