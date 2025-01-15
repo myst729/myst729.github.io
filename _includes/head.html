@@ -10,7 +10,7 @@
     {{ page.title }} &laquo; {{ site.title }}
   {% endif %}
   </title>
-  <link rel="icon" type="image/png" href="{{ site.avatar.png | relative_url }}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ site.avatar.favicon | relative_url }}" sizes="32x32" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?v=' | relative_url }}">
 
   {% for stylesheet in page.css %}
