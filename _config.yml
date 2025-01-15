@@ -11,6 +11,7 @@ avatar:
   png: /assets/avatar.png
   svg: /assets/avatar.svg
   anima: /assets/avatar-animation.svg
+  favicon: /assets/avatar-favicon.png
 
 myself:
   icon: color
