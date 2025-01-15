@@ -618,13 +618,17 @@ tbody tr:nth-child(odd) th {
   .masthead {
     padding-top: .6rem;
     padding-bottom: .6rem;
+    .container {
+      padding-left: .75rem;
+      padding-right: .75rem;
+    }
     &-title {
       svg {
         width: 32px;
         height: 32px;
       }
       small {
-        font-size: 75%;
+        font-size: 65%;
       }
     }
     &-social li {
