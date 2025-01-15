@@ -534,7 +534,8 @@ tbody tr:nth-child(odd) th {
     width: 40px;
     height: 40px;
   }
-  .eyeball {
+  .left-pupil,
+  .right-pupil {
     animation: spin both linear 7;
     animation-timeline: scroll(root);
   }
