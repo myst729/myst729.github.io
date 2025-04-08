@@ -263,3 +263,13 @@ echo '{"method":"tools/call","params":{"name":"power","arguments":{"a":2,"b":7}}
 ## 代码
 
 代码自取，仅供参考：[myst729/calc-mcp](https://github.com/myst729/calc-mcp/)
+
+## 更新 2025-04-08
+
+[VSCode 推出 agent mode，支持 MCP](https://code.visualstudio.com/blogs/2025/04/07/agentMode)。根据官方提供的[文档](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)尝试了一下，在 VSCode Insider 中将 MCP 服务配置成全局可见，Copilot Chat 调用成功。配置为工作区可见目前暂时不生效，不知道是我配置方式不对，还是功能没有完全开放。
+
+![图片](images/vscode-mcp.png)
+
+使用效果还不错，这下可以把 Claude Desktop 扔掉了。
+
+![图片](images/vscode-copilot-chat-mcp.png)
