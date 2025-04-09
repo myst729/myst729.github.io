@@ -13,17 +13,20 @@ avatar:
   anima: /assets/avatar-animation.svg
   favicon: /assets/avatar-favicon.png
 
-myself:
-  icon: color
-  link: myself
+issues:
+  - link: myself
+    icon: flower
+  - link: french
+    icon: france
 
 social:
   - id: github
     url: https://github.com/myst729
-  - id: twitter
-    url: https://twitter.com/myst729
   - id: stackoverflow
     url: https://stackoverflow.com/users/1032492
+  - id: twitter
+    url: https://twitter.com/myst729
+    inactive: true
   - id: weibo
     url: https://weibo.com/myst729
     inactive: true
