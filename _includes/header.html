@@ -10,7 +10,7 @@
     <ul class="masthead-social">
       {% for item in site.issues %}
       <li>
-        <a href="{{ item.link | relative_url }}">
+        <a href="{{ item.link | relative_url }}" title="{{ item.descripton }}">
           {% include icons/{{ item.icon }}.svg %}
         </a>
       </li>
@@ -18,7 +18,7 @@
       {% for item in site.social %}
       {% if item.inactive != true %}
       <li>
-        <a href="{{ item.url }}" target="_blank">
+        <a href="{{ item.url }}" title="{{ item.descripton }}" target="_blank">
           {% include icons/{{ item.id }}.svg %}
         </a>
       </li>

@@ -16,19 +16,25 @@ avatar:
 issues:
   - link: myself
     icon: flower
+    descripton: "Myself"
   - link: french
     icon: france
+    descripton: "Français"
 
 social:
   - id: github
     url: https://github.com/myst729
+    descripton: "GitHub"
   - id: stackoverflow
     url: https://stackoverflow.com/users/1032492
+    descripton: "Stack Overflow"
   - id: twitter
     url: https://twitter.com/myst729
+    descripton: "Twitter"
     inactive: true
   - id: weibo
     url: https://weibo.com/myst729
+    descripton: "Weibo"
     inactive: true
 
 themes: standard # lite, standard
