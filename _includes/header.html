@@ -3,23 +3,20 @@
   <div class="container">
     <h3 class="masthead-title serif">
       <a href="{{ '/' | relative_url }}">
-        {% include avatar/avatar-animatable.svg %}
+        {% include avatar/animatable.svg %}
       </a>
       <small>{{ site.tagline }}</small>
     </h3>
-    <ul class="masthead-social">
-      {% for item in site.issues %}
-      <li>
-        <a href="{{ item.link | relative_url }}" title="{{ item.descripton }}">
-          {% include icons/{{ item.icon }}.svg %}
-        </a>
-      </li>
-      {% endfor %}
-      {% for item in site.social %}
+    <ul class="masthead-links">
+      {% for item in site.links %}
       {% if item.inactive != true %}
       <li>
-        <a href="{{ item.url }}" title="{{ item.descripton }}" target="_blank">
-          {% include icons/{{ item.id }}.svg %}
+        {% if item.internal %}
+        <a href="{{ item.url | relative_url }}" title="{{ item.title }}">
+        {% else %}
+        <a href="{{ item.url }}" title="{{ item.title }}" target="_blank">
+        {% endif %}
+          {% include icons/{{ item.icon }}.svg %}
         </a>
       </li>
       {% endif %}
