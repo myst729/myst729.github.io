@@ -209,7 +209,7 @@ echo '{"method":"tools/call","params":{"name":"power","arguments":{"a":2,"b":7}}
 
 用你喜欢的文本编辑器打开它，输入以下内容。非常简单，就是调用一个 node 命令行工具。
 
-```json
+{% highlight json mark_lines="4 5" %}
 {
   "mcpServers": {
     "calc-mcp": {
@@ -218,7 +218,7 @@ echo '{"method":"tools/call","params":{"name":"power","arguments":{"a":2,"b":7}}
     }
   }
 }
-```
+{% endhighlight %}
 
 保存 **claude_desktop_config.json**，重启 Claude.app 并打开设置界面，如果看到这个 MCP 服务的状态是 **running**，那就没问题了。
 

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'jekyll-theme-myst729'
-  spec.version       = '0.1.0'
+  spec.version       = '0.2.0'
   spec.authors       = ['Leo']
   spec.email         = ['myst.dg@gmail.com']
   spec.homepage      = 'https://github.com/myst729/jekyll-theme-myst729'
@@ -15,6 +15,6 @@ Gem::Specification.new do |spec|
   spec.platform      = Gem::Platform::RUBY
   spec.license       = 'MIT'
 
-  spec.add_dependency 'jekyll', '~> 4.2'
+  spec.add_dependency 'jekyll', '~> 4.4'
   spec.add_dependency 'jekyll-minifier', '~> 0.1'
 end

@@ -8,33 +8,37 @@ herolink: posts
 excerpt_separator: <!-- more -->
 
 avatar:
-  png: /assets/avatar.png
-  svg: /assets/avatar.svg
-  anima: /assets/avatar-animation.svg
-  favicon: /assets/avatar-favicon.png
+  png: /assets/avatar/static.png
+  svg: /assets/avatar/static.svg
+  anima: /assets/avatar/animation.svg
+  favicon: /assets/avatar/favicon.png
 
-issues:
-  - link: myself
-    icon: flower
-    descripton: "Myself"
-  - link: french
-    icon: france
-    descripton: "Français"
-
-social:
-  - id: github
+links:
+  - icon: mind
+    title: Posts
+    url: posts
+    internal: true
+  - icon: flower
+    title: Myself
+    url: myself
+    internal: true
+  - icon: france
+    title: Français
+    url: french
+    internal: true
+  - icon: github
+    title: GitHub
     url: https://github.com/myst729
-    descripton: "GitHub"
-  - id: stackoverflow
+  - icon: stackoverflow
+    title: Stack Overflow
     url: https://stackoverflow.com/users/1032492
-    descripton: "Stack Overflow"
-  - id: twitter
+  - icon: twitter
+    title: Twitter
     url: https://twitter.com/myst729
-    descripton: "Twitter"
     inactive: true
-  - id: weibo
+  - icon: weibo
+    title: Weibo
     url: https://weibo.com/myst729
-    descripton: "Weibo"
     inactive: true
 
 themes: standard # lite, standard

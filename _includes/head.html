@@ -11,10 +11,10 @@
   {% endif %}
   </title>
   <link rel="icon" type="image/png" href="{{ site.avatar.favicon | relative_url }}" sizes="32x32" />
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?v=' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | append_revision: '?t=' | relative_url }}">
 
   {% for stylesheet in page.css %}
-  <link rel="stylesheet" href="{{ stylesheet | append_revision: '?v=' }}">
+  <link rel="stylesheet" href="{{ stylesheet | append_revision: '?t=' }}">
   {% endfor %}
 
   {% include theme.html %}

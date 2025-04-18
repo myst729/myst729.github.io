@@ -15,5 +15,5 @@
 </script>
 
 {% for javascript in page.js %}
-<script src="{{ javascript | append_revision: '?v=' }}"></script>
+<script src="{{ javascript | append_revision: '?t=' }}"></script>
 {% endfor %}

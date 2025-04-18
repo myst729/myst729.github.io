@@ -244,7 +244,7 @@ cite:before {
 img,
 video {
   display: block;
-  max-width: 100%;
+  max-width: calc(100% - 2rem);
   margin: 1rem auto;
   border-radius: .35em;
 }
@@ -586,8 +586,8 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-.home-social,
-.masthead-social {
+.home-links,
+.masthead-links {
   display: flex;
   list-style: none;
   margin: 0;
@@ -605,7 +605,7 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-.masthead-social {
+.masthead-links {
   li {
     margin: 0 .5em;
   }
@@ -633,8 +633,8 @@ tbody tr:nth-child(odd) th {
         font-size: 65%;
       }
     }
-    &-social li {
-      margin: 0 .36em;
+    &-links li {
+      margin: 0 .32em;
     }
   }
   .progress {
@@ -683,7 +683,7 @@ tbody tr:nth-child(odd) th {
     width: 90vw;
     max-width: 50rem;
   }
-  &-social {
+  &-links {
     display: block;
     list-style: none;
     margin: 0;
@@ -806,8 +806,9 @@ tbody tr:nth-child(odd) th {
   transition: color ease-out .3s;
 }
 
-.highlighter-rouge {
-  margin-bottom: 1rem;
+figure.highlight,
+div.highlighter-rouge {
+  margin: 1rem;
 }
 
 
