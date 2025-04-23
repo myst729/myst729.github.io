@@ -8,5 +8,8 @@ layout: default
   <div class="body">
     {{ content }}
     <hr>
+    {% if page.silent != true %}
+    {% include utterances.html %}
+    {% endif %}
   </div>
 </div>

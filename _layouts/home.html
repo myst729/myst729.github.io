@@ -3,7 +3,11 @@
   {% include head.html %}
   <body>
     <div class="wrap home">
-      {% include switch.html %}
+      {% if site.themes == 'lite' %}
+        {% include switch-lite.html %}
+      {% else %}
+        {% include switch.html %}
+      {% endif %}
       <a class="home-avatar" href="{{ site.herolink | relative_url }}">
         {% include avatar/animation.svg %}
       </a>

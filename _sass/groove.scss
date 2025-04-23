@@ -861,6 +861,26 @@ div.highlighter-rouge {
 
 
 /*
+ * Utterances Comments
+ *
+ * Enable utteranc.es comments system with GitHub issues.
+ */
+
+[data-theme="light"] .utterances-light,
+[data-theme="dark"] .utterances-dark {
+  display: block;
+  margin-bottom: 1rem;
+}
+[data-theme="light"] .utterances-dark,
+[data-theme="dark"] .utterances-light {
+  display: none;
+}
+.utterances {
+  max-width: calc(100% - 2rem);
+}
+
+
+/*
  * Custom Type
  *
  * Extend paragraphs with `.lead` for larger introductory text.
